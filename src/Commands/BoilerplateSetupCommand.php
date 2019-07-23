@@ -29,7 +29,7 @@ class BoilerplateSetupCommand extends Command
      */
     public function handle()
     {
-        $this->installCookieConsent();
+        //$this->installCookieConsent();
 
         $this->overwriteBootstrapJs();
 
@@ -37,9 +37,7 @@ class BoilerplateSetupCommand extends Command
 
     /**
      * Install osano/cookieconsent npm package
-     * See: https://www.npmjs.com/package/cookieconsent
-     * and: https://github.com/osano/cookieconsent
-     * and: https://cookieconsent.osano.com/
+     * See: https://github.com/Wruczek/Bootstrap-Cookie-Alert
      */
     protected function installCookieConsent(): void
     {
@@ -49,10 +47,10 @@ class BoilerplateSetupCommand extends Command
                 'npm',
                 'install',
                 '--save-dev',
-                'cookieconsent'
+                'bootstrap-cookie-alert'
             ],
             app()->basePath()))->mustRun();
-        $this->info("Npm package 'cookieconsent' successfully installed.");
+        $this->info("Npm package 'bootstrap-cookie-alert' successfully installed.");
     }
 
     /**
@@ -65,9 +63,10 @@ class BoilerplateSetupCommand extends Command
         if (file_exists(resource_path('js/bootstrap.js'))) {
             file_put_contents(
                 resource_path('js/bootstrap.js'),
-                "require('./vendor/webflorist/boilerplate/resources/js/bootstrap');"
+                "require('../../vendor/webflorist/boilerplate/src/resources/js/bootstrap');"
             );
         }
+
     }
 
 }

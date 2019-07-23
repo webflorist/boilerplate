@@ -1,0 +1,23 @@
+@import 'functions';
+
+// App Variables
+@import '../../../../../../resources/sass/variables';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=#{str-replace($font-sans-serif,' ','+')}:300,400,500,700|#{str-replace($font-serif,' ','+')}:400,700|Material+Icons');
+
+// Material Kit Variables and Mixins
+@import '../../../../../../resources/sass/material-kit/variables';
+@import '../../../../../../resources/sass/material-kit/mixins';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Cookie Consent
+@import 'cookie-consent';
+
+// Font Awesome Icons
+@import '~@fortawesome/fontawesome-pro/scss/fontawesome';
+@import '~@fortawesome/fontawesome-pro/scss/regular';
+@import '~@fortawesome/fontawesome-pro/scss/solid';
+@import '~@fortawesome/fontawesome-pro/scss/brands';
