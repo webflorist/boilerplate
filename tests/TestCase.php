@@ -5,6 +5,7 @@ namespace BoilerplateTests;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Routing\Router;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use Webflorist\Boilerplate\BoilerplateService;
 use Webflorist\Boilerplate\BoilerplateServiceProvider;
 use Webflorist\Boilerplate\BoilerplateFacade;
 
@@ -18,10 +19,16 @@ class TestCase extends BaseTestCase
      * @var Repository
      */
     protected $config;
+
     /**
      * @var Router
      */
     protected $router;
+
+    /**
+     * @var BoilerplateService
+     */
+    protected $boilerplateService;
 
     protected function getPackageProviders($app)
     {
@@ -41,6 +48,7 @@ class TestCase extends BaseTestCase
     {
         $this->router = $app[Router::class];
         $this->config = $app['config'];
+        $this->boilerplateService = $app[BoilerplateService::class];
     }
 
 

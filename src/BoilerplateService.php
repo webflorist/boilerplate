@@ -2,6 +2,8 @@
 
 namespace Webflorist\Boilerplate;
 
+use Webflorist\Boilerplate\CookieConsent\CookieConsentService;
+
 /**
  * The main service-class of this package.
  *
@@ -11,6 +13,16 @@ namespace Webflorist\Boilerplate;
  */
 class BoilerplateService
 {
+    /**
+     * @var CookieConsentService
+     */
+    public $cookieConsent;
 
-
+    /**
+     * BoilerplateService constructor.
+     */
+    public function __construct()
+    {
+        $this->cookieConsent = new CookieConsentService();
+    }
 }

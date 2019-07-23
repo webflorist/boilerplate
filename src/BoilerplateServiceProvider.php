@@ -4,6 +4,7 @@ namespace Webflorist\Boilerplate;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
+use Webflorist\Boilerplate\Commands\BoilerplateSetupCommand;
 
 class BoilerplateServiceProvider extends ServiceProvider
 {
@@ -57,6 +58,7 @@ class BoilerplateServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
+                BoilerplateSetupCommand::class
             ]);
         }
     }
