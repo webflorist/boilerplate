@@ -6,10 +6,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=#{str-replace($font-sans-serif,' ','+')}:300,400,500,700|#{str-replace($font-serif,' ','+')}:400,700|Material+Icons');
 
-// Material Kit Variables and Mixins
-@import '../../../../../../resources/sass/material-kit/variables';
-@import '../../../../../../resources/sass/material-kit/mixins';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
