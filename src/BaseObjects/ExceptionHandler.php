@@ -4,9 +4,9 @@ namespace Webflorist\Boilerplate\BaseObjects;
 
 use Exception;
 use Google\Cloud\ErrorReporting\Bootstrap;
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Foundation\Exceptions\Handler;
 
-abstract class Handler extends ExceptionHandler
+abstract class ExceptionHandler extends Handler
 {
     /**
      * A list of the exception types that are not reported.
