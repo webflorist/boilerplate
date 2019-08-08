@@ -1,15 +1,25 @@
 @component('webflorist-boilerplate::material-kit.master', [
     'smallHeader' => false,
-    'copyright' => 'webflorist',
-    'centerNavItems' => true,
-    'navbarIcons' => [
-        '<a href="#" class="nav-link"><i class="fas fa-globe"></i></a>',
-        '<a href="#" class="nav-link"><i class="fas fa-user"></i></a>',
-    ]
+    'copyright' => 'webflorist'
 ])
 
     @slot('navbarBrand')
         My Awesome Brand
+    @endslot
+
+    @slot('navbarNav')
+        <ul class="navbar-nav ml-auto">
+            @foreach(route_tree()->getRootNode()->getChildNodes() as $routeNode)
+                @if($routeNode->getData('isMainNavItem'))
+                    <li class="nav-item">
+                        <a href="{{$routeNode->getUrl()}}" class="nav-link" data-toggle="tooltip"
+                           title="{{$routeNode->getData('title')}}">
+                            {{$routeNode->getNavTitle()}}
+                        </a>
+                    </li>
+                @endif
+            @endforeach
+        </ul>
     @endslot
 
     @slot('headerContent')
