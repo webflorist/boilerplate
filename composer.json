@@ -1,6 +1,6 @@
 {
     "name": "webflorist/boilerplate",
-    "description": "Blueprint for a Laravel (5.8+) package.",
+    "description": "Boilerplate functionality for a Laravel (5.8+) application.",
     "authors": [
         {
             "name": "Gerald Buttinger",
@@ -9,13 +9,17 @@
     ],
     "require": {
         "php": "~7.1",
-		"laravel/framework": "~5.8",
+        "laravel/framework": "~5.8",
         "google/cloud-error-reporting": "^0.14.5",
         "google/cloud-logging": "^1.16",
+        "webflorist/htmlfactory": "dev-develop",
+        "webflorist/routetree": "dev-develop",
         "webflorist/validation-manager": "dev-develop"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.8"
+        "orchestra/testbench": "~3.8",
+        "gajus/dindent": "^2.0",
+        "ext-dom": "*"
     },
     "autoload": {
         "psr-4": {
@@ -26,6 +30,23 @@
             "src/helpers.php"
         ]
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/webflorist/validation-manager",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/webflorist/routetree",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/webflorist/htmlfactory",
+            "no-api": true
+        }
+    ],
     "extra": {
         "laravel": {
             "providers": [

@@ -2,12 +2,15 @@
 
 namespace BoilerplateTests;
 
+use HtmlFactoryTests\Traits\AssertsHtml;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\View\Factory;
 use Illuminate\Routing\Router;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Webflorist\Boilerplate\BoilerplateService;
 use Webflorist\Boilerplate\BoilerplateServiceProvider;
 use Webflorist\Boilerplate\BoilerplateFacade;
+use Webflorist\RouteTree\RouteTreeServiceProvider;
 
 /**
  * Class TestCase
@@ -15,6 +18,8 @@ use Webflorist\Boilerplate\BoilerplateFacade;
  */
 class TestCase extends BaseTestCase
 {
+    use AssertsHtml;
+
     /**
      * @var Repository
      */
@@ -33,6 +38,7 @@ class TestCase extends BaseTestCase
     protected function getPackageProviders($app)
     {
         return [
+            RouteTreeServiceProvider::class,
             BoilerplateServiceProvider::class
         ];
     }
@@ -46,6 +52,9 @@ class TestCase extends BaseTestCase
 
     protected function getEnvironmentSetUp($app)
     {
+        /** @var Factory $viewService */
+        $viewService = $app['view'];
+        $viewService->addNamespace('bootstrap-tests', __DIR__ . '/views');
         $this->router = $app[Router::class];
         $this->config = $app['config'];
         $this->boilerplateService = $app[BoilerplateService::class];

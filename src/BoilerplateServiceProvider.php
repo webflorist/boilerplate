@@ -32,14 +32,13 @@ class BoilerplateServiceProvider extends ServiceProvider
         $this->loadMigrations();
         $this->loadTranslations();
         $this->loadViews();
-        $this->setBladeDirectives();
     }
 
     protected function mergeConfig()
     {
         $this->mergeConfigFrom(__DIR__ . '/config/boilerplate.php', 'boilerplate');
     }
-    
+
     protected function registerService()
     {
         $this->app->singleton(BoilerplateService::class, function () {
@@ -62,7 +61,6 @@ class BoilerplateServiceProvider extends ServiceProvider
             ]);
         }
     }
-	
 
     private function loadMigrations()
     {
@@ -71,20 +69,11 @@ class BoilerplateServiceProvider extends ServiceProvider
 
     private function loadTranslations()
     {
-        $this->loadTranslationsFrom(__DIR__ . "/resources/lang","Webflorist-Boilerplate");
+        $this->loadTranslationsFrom(__DIR__ . "/resources/lang","webflorist-boilerplate");
     }
 
     private function loadViews()
     {
-        $this->loadViewsFrom(__DIR__.'/views', 'boilerplate');
-    }
-
-    private function setBladeDirectives()
-    {
-        /** @var BladeCompiler $blade */
-        $blade =  app(BladeCompiler::class);
-        $blade->directive('boilerplate', function ($marker='default') {
-            return "<?php echo 'boilerplate' ?>";
-        });
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'webflorist-boilerplate');
     }
 }

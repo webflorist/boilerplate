@@ -1,0 +1,47 @@
+// Various Assets
+@import 'functions';
+@import 'colors';
+
+// Load App Variables
+@import '../../../../../../resources/sass/variables';
+
+// Set Font Variables
+$font-family-sans-serif: map-get($webflorist-boilerplate,'font-body'), 'Helvetica', 'Arial', sans-serif !default;
+$font-family-serif:      map-get($webflorist-boilerplate,'font-heading'), 'Times New Roman', serif !default;
+@import url('https://fonts.googleapis.com/css?family=#{str-replace(map-get($webflorist-boilerplate,'font-body'),' ','+')}:300,400,500,700|#{str-replace(map-get($webflorist-boilerplate,'font-heading'),' ','+')}:400,700|Material+Icons');
+
+// Set Color Variables
+@import '../../../../../../resources/material-kit/assets/scss/material-kit/variables/colors';
+$primary:       map-get($webflorist-boilerplate,'color-primary') !default;
+$secondary:     map-get($webflorist-boilerplate,'color-secondary') !default;
+$success:       map-get($webflorist-boilerplate,'color-success') !default;
+$info:          map-get($webflorist-boilerplate,'color-info') !default;
+$warning:       map-get($webflorist-boilerplate,'color-warning') !default;
+$danger:        map-get($webflorist-boilerplate,'color-danger') !default;
+
+$brand-primary:              $primary;
+$brand-info:                 $info;
+$brand-success:              $success;
+$brand-warning:              $warning;
+$brand-danger:               $danger;
+$brand-rose:                 $col-pink-500 !default;
+$brand-inverse:              $black-color !default;
+
+// Font sizes
+$font-paragraph:               1.0625rem !default;
+
+// Material Kit Variables and Mixins
+@import '../../../../../../resources/material-kit/assets/scss/material-kit/variables';
+@import '../../../../../../resources/material-kit/assets/scss/material-kit/mixins';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Cookie Consent
+@import 'cookie-consent';
+
+// Font Awesome Icons
+@import '~@fortawesome/fontawesome-pro/scss/fontawesome';
+@import '~@fortawesome/fontawesome-pro/scss/regular';
+@import '~@fortawesome/fontawesome-pro/scss/solid';
+@import '~@fortawesome/fontawesome-pro/scss/brands';
