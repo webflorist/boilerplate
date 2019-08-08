@@ -38,11 +38,19 @@ class MasterViewTest extends TestCase
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="navbar-toggler-icon"></span> <span class="navbar-toggler-icon"></span> <span class="navbar-toggler-icon"></span> </button>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav ml-auto"></ul>
+                    <ul class="navbar-nav ml-auto navbar-center "></ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="fas fa-globe"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="fas fa-user"></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-        <header class="page-header header-filter " data-parallax="true" style="background-image: url(\'img/\');"> My Awesome Header Content
+        <header class="page-header header-filter " data-parallax="true" style="background-image: url(\'\');"> My Awesome Header Content
 </header>
         <main class="main main-raised"> My Awesome Main Content
 </main>

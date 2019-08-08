@@ -1,6 +1,11 @@
 @component('webflorist-boilerplate::material-kit.master', [
     'smallHeader' => false,
-    'copyright' => 'webflorist'
+    'copyright' => 'webflorist',
+    'centerNavItems' => true,
+    'navbarIcons' => [
+        '<a href="#" class="nav-link"><i class="fas fa-globe"></i></a>',
+        '<a href="#" class="nav-link"><i class="fas fa-user"></i></a>',
+    ]
 ])
 
     @slot('navbarBrand')

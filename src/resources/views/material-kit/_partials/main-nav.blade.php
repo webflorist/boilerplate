@@ -14,13 +14,22 @@
             </button>
         </div>
         <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto @if($centerNavItems ?? false) navbar-center @endisset">
                 @foreach(route_tree()->getRootNode()->getChildNodes() as $routeNode)
                     @if($routeNode->getData('isMainNavItem'))
                         @include('webflorist-boilerplate::material-kit._partials.main-nav-item', ['routeNode' => $routeNode])
                     @endif
                 @endforeach
             </ul>
+            @isset($navbarIcons)
+                <ul class="navbar-nav ml-auto">
+                    @foreach($navbarIcons as $htmlCode)
+                        <li class="nav-item">
+                            {!! $htmlCode !!}
+                        </li>
+                    @endforeach
+                </ul>
+            @endisset
         </div>
     </div>
 </nav>
