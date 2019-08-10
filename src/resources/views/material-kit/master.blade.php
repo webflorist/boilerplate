@@ -23,7 +23,7 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
           name='viewport'/>
 
-    <link type="text/css" rel="stylesheet" href="css/app.css">
+    <link type="text/css" rel="stylesheet" href="/css/app.css">
 
 </head>
 
@@ -39,7 +39,7 @@
 
 @include('webflorist-boilerplate::cookie-consent')
 
-<script src="js/app.js" type="text/javascript"></script>
+<script src="/js/app.js" type="text/javascript"></script>
 
 {{$scripts}}
 
