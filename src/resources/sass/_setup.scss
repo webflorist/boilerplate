@@ -1,0 +1,19 @@
+// Various Assets
+@import 'functions';
+@import 'colors';
+
+// Load App Variables
+@import '../../../../../../resources/sass/variables';
+
+// Set Bootstrap Font Variables
+$font-family-sans-serif: $body-font, 'Helvetica', 'Arial', sans-serif !default;
+$headings-font-family:   $header-font, 'Times New Roman', serif !default;
+@import url('https://fonts.googleapis.com/css?family=#{str-replace($body-font,' ','+')}:300,400,500,700|#{str-replace($header-font,' ','+')}:400,700|Material+Icons');
+
+// Set Bootstrap Color Variables
+$primary:       $primary-color !default;
+$secondary:     $accent-color !default;
+$light:         $primary-color-light !default;
+$dark:          $primary-color-dark !default;
+$body-color:    $primary-text-color !default;
+$text-muted:    $secondary-text-color !default;

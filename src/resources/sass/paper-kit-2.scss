@@ -1,0 +1,13 @@
+// general setup
+@import 'setup';
+
+// paper-kit-2 color variables
+$primary-color:              $primary !default;
+$secondary-color:            $secondary !default;
+$secondary-states-color:     darken($secondary-color, 10%) !default;
+
+// general imports
+@import 'imports';
+
+// paper-kit-2 import
+@import '../../../../../../resources/paper-kit-2/assets/scss/paper-kit';

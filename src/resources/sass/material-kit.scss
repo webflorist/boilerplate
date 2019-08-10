@@ -1,0 +1,15 @@
+// general setup
+@import 'setup';
+
+// material-kit colors
+$brand-primary:              $primary;
+
+// material-kit variables and mixins
+@import '../../../../../../resources/material-kit/assets/scss/material-kit/variables';
+@import '../../../../../../resources/material-kit/assets/scss/material-kit/mixins';
+
+// general imports
+@import 'imports';
+
+// material kit import
+@import '../../../../../../resources/material-kit/assets/scss/material-kit';
