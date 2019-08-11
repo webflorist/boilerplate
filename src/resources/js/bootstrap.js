@@ -56,4 +56,5 @@ if (token) {
 // });
 
 
-require('./cookie-consent.js');
+require('./cookie-consent');
+require('./smooth-scroll-to-anchor');
