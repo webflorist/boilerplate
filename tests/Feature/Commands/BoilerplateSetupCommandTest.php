@@ -1,6 +1,6 @@
 <?php
 
-namespace BoilerplateTests\Feature;
+namespace BoilerplateTests\Feature\Commands;
 
 use BoilerplateTests\TestCase;
 
