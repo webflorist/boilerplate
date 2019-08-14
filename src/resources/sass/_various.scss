@@ -6,3 +6,8 @@
     cursor: pointer;
 }
 
+// Always display (in)valid-feedback,
+// since their display is handled by Vue.
+.invalid-feedback, .valid-feedback {
+    display: block !important;
+}
