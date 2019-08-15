@@ -14,7 +14,6 @@
         "google/cloud-logging": "^1.16",
         "webflorist/htmlfactory": "dev-develop",
         "webflorist/routetree": "dev-develop",
-        "webflorist/validation-manager": "dev-develop",
         "umpirsky/country-list": "^2.0"
     },
     "require-dev": {
@@ -32,11 +31,6 @@
         ]
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/webflorist/validation-manager",
-            "no-api": true
-        },
         {
             "type": "vcs",
             "url": "https://github.com/webflorist/routetree",
