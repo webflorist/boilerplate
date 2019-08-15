@@ -94,7 +94,7 @@ return [
     'present'              => ':attribute muss vorhanden sein.',
     'regex'                => ':attribute Format ist ungültig.',
     'required'             => ':attribute muss ausgefüllt sein.',
-    'required_if'          => ':attribute muss ausgefüllt sein, wenn :other :value ist.',
+    'required_if'          => ':attribute muss ausgefüllt sein.',
     'required_unless'      => ':attribute muss ausgefüllt sein, wenn :other nicht :values ist.',
     'required_with'        => ':attribute muss angegeben werden, wenn :values ausgefüllt wurde.',
     'required_with_all'    => ':attribute muss angegeben werden, wenn :values ausgefüllt wurde.',
