@@ -6,6 +6,9 @@ $primary-color:              $primary !default;
 $secondary-color:            $secondary !default;
 $secondary-states-color:     darken($secondary-color, 10%) !default;
 
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
 // general imports
 @import 'imports';
 
