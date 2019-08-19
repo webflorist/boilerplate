@@ -4,7 +4,6 @@
     @php($routeNode = route_tree()->getCurrentNode())
     <title>{{$routeNode->getData('documentTitle')}}</title>
     <meta name="description" content="{{$routeNode->getData('metaDescription')}}">
-    @preload
 
     <meta charset="utf-8">
 
@@ -24,10 +23,10 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no'
           name='viewport'/>
 
-    <link type="text/css" rel="stylesheet" href="/css/app.css">
+    <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
 </head>
 
@@ -43,7 +42,7 @@
 
 @include('webflorist-boilerplate::cookie-consent')
 
-<script src="/js/app.js" type="text/javascript"></script>
+<script src="{{ mix('/js/app.js') }}"></script>
 
 {{$scripts}}
 

@@ -14,8 +14,7 @@
         "google/cloud-logging": "^1.16",
         "webflorist/htmlfactory": "dev-develop",
         "webflorist/routetree": "dev-develop",
-        "umpirsky/country-list": "^2.0",
-        "spatie/laravel-mix-preload": "^0.1.6"
+        "umpirsky/country-list": "^2.0"
     },
     "require-dev": {
         "orchestra/testbench": "~3.8",
