@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-color-on-scroll navbar-transparent fixed-top " color-on-scroll="100"
+<nav class="navbar navbar-expand-lg navbar-color-on-scroll navbar-transparent fixed-top" color-on-scroll="100"
      id="sectionsNav">
     <div class="container">
         <div class="navbar-translate">

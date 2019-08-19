@@ -7,7 +7,7 @@
 
     <meta charset="utf-8">
 
-    <meta name="robots" content="noindex,nofollow" />
+    <meta name="robots" content="noindex,nofollow"/>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,7 +19,7 @@
     <meta name="environment" content="{{app()->environment()}}">
     <meta name="static" content="{{ config('static-routes.is_generating', false) ? 'true' : 'false' }}">
 
-    <meta name="csrf-token" content="undefined">
+    <meta name="csrf-token" content="{{ config('static-routes.is_generating', false) ? 'undefined' : csrf_token()  }}">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
@@ -42,7 +42,9 @@
     {!! Form::generateVueInstances() !!}
 </script>
 
-{{$scripts}}
+@isset($scripts)
+    {{$scripts}}
+@endisset
 
 </body>
 
