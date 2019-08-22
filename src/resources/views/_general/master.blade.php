@@ -28,6 +28,10 @@
 
     <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
+    @isset($head)
+        {{$head}}
+    @endisset
+
 </head>
 
 <body class="{{$routeNode->getData('bodyClass')}}">

@@ -1,5 +1,9 @@
 @component('webflorist-boilerplate::_general.master')
 
+    @slot('head')
+        {{$head}}
+    @endslot
+
     @slot('body')
         @include('webflorist-boilerplate::material-kit._partials.main-nav')
         @include('webflorist-boilerplate::material-kit._partials.header')

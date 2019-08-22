@@ -1,5 +1,3 @@
-<div class="wrapper">
-    <main class="main">
-        {{$mainContent}}
-    </main>
-</div>
+<main class="main @if($mainRaised ?? false) main-raised @endif">
+    {{$mainContent}}
+</main>
