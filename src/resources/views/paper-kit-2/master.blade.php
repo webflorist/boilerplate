@@ -11,4 +11,8 @@
         @include('webflorist-boilerplate::paper-kit-2._partials.footer')
     @endslot
 
+    @slot('scripts')
+        {{$scripts}}
+    @endslot
+
 @endcomponent
