@@ -14,3 +14,6 @@ $secondary-states-color:     darken($secondary-color, 10%) !default;
 
 // paper-kit-2 import
 @import '../../../../../../resources/paper-kit-2/assets/scss/paper-kit';
+
+// own ui-kit
+@import 'ui-kit/ui-kit';
