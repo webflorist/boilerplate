@@ -12,9 +12,37 @@ $font-family-serif:      $headings-font-family;
 @import url('https://fonts.googleapis.com/css?family=#{str-replace($body-font,' ','+')}:300,400,500,700|#{str-replace($header-font,' ','+')}:400,700|Material+Icons');
 
 // Set Bootstrap Color Variables
-$primary:       $primary-color !default;
-$secondary:     $accent-color !default;
-$light:         $primary-color-light !default;
-$dark:          $primary-color-dark !default;
-$body-color:    $primary-text-color !default;
-$text-muted:    $secondary-text-color !default;
+$primary:           $color-primary !default;
+$primary-light:     $color-primary-light !default;
+$primary-dark:      $color-primary-dark !default;
+$secondary:         $color-secondary !default;
+$secondary-light:   $color-secondary-light !default;
+$secondary-dark:    $color-secondary-dark !default;
+$light:             $primary-light;
+$dark:              $primary-dark;
+$body-color:        map-get($color-palette-grey, 900) !default;
+$text-muted:        map-get($color-palette-grey, 600) !default;
+$success:           #28a745 !default;
+$info:              #17a2b8 !default;
+$warning:           #ffc107 !default;
+$danger:            #dc3545 !default;
+
+// Set Bootstrap Theme Colors
+$theme-colors: () !default;
+$theme-colors: map-merge(
+        (
+            "primary":          $primary,
+            "primary-light":    $primary-light,
+            "primary-dark":     $primary-dark,
+            "secondary":          $secondary,
+            "secondary-light":    $secondary-light,
+            "secondary-dark":     $secondary-dark,
+            "success":          $success,
+            "info":             $info,
+            "warning":          $warning,
+            "danger":           $danger,
+            "light":            $light,
+            "dark":             $dark,
+        ),
+        $theme-colors
+);
