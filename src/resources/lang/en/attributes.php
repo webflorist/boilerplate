@@ -49,6 +49,9 @@ return [
     // hCard format (http://microformats.org/wiki/hcard).
     'org' => 'Organisation',
     'fn' => 'Name',
+    'honorific_prefix' => 'Salutation',
+    'given_name' => 'First Name',
+    'family_name' => 'Last Name',
     'street_address' => 'Street',
     'extended_address' => 'Street 2',
     'postal_code' => 'Postal Code',

@@ -49,6 +49,11 @@ return [
     // hCard format (http://microformats.org/wiki/hcard).
     'org' => 'Organisation',
     'fn' => 'Name',
+    'honorific_prefix' => 'Anrede',
+    'honorific_prefix_mr' => 'Herr',
+    'honorific_prefix_ms' => 'Frau',
+    'given_name' => 'Vorname',
+    'family_name' => 'Nachname',
     'street_address' => 'Straße',
     'extended_address' => 'Straße 2',
     'postal_code' => 'PLZ',
