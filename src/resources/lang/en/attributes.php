@@ -50,6 +50,8 @@ return [
     'org' => 'Organisation',
     'fn' => 'Name',
     'honorific_prefix' => 'Salutation',
+    'honorific_prefix_mr' => 'Mr.',
+    'honorific_prefix_ms' => 'Ms.',
     'given_name' => 'First Name',
     'family_name' => 'Last Name',
     'street_address' => 'Street',

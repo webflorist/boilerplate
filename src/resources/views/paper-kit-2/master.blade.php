@@ -1,4 +1,6 @@
-@component('webflorist-boilerplate::_general.master')
+@component('webflorist-boilerplate::_general.master', [
+    'documentTitle' => $documentTitle
+])
 
     @isset($head)
         @slot('head')

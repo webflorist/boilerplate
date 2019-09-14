@@ -72,5 +72,4 @@ return [
     'submit' => 'Absenden',
     'cancel' => 'Abbrechen',
 
-
 ];

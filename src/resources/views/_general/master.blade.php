@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @php($routeNode = route_tree()->getCurrentNode())
-    <title>{{$routeNode->getData('documentTitle')}}</title>
+    <title>{{$documentTitle}}</title>
     <meta name="description" content="{{$routeNode->getData('metaDescription')}}">
 
     <meta charset="utf-8">

@@ -14,7 +14,8 @@
         "google/cloud-logging": "^1.16",
         "webflorist/htmlfactory": "dev-develop",
         "webflorist/routetree": "dev-develop",
-        "umpirsky/country-list": "^2.0"
+        "umpirsky/country-list": "^2.0",
+        "umpirsky/language-list": "^1.0"
     },
     "require-dev": {
         "orchestra/testbench": "~3.8",

@@ -16,4 +16,13 @@ class BoilerplateServiceTest extends TestCase
         );
     }
 
+    public function test_getLanguageList()
+    {
+        $countryList = webflorist_boilerplate()->getLanguageList();
+        $this->assertEquals(
+            'German',
+            $countryList['de']
+        );
+    }
+
 }
