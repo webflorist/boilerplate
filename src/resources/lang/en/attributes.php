@@ -62,7 +62,7 @@ return [
     'region' => 'State/Province',
     'country_name' => 'Country',
     'tel' => 'Phone',
-    'url' => 'Webseite',
+    'url' => 'Website',
     'url_placeholder' => 'http://www.example.domain',
     'logo' => 'Logo',
 
@@ -71,5 +71,10 @@ return [
     'logout' => 'Logout',
     'submit' => 'Submit',
     'cancel' => 'Cancel',
+    'edit' => 'Edit',
+    'select' => 'Select',
+    'delete' => 'Delete',
+    'search' => 'Search',
+    'create' => 'Create',
 
 ];

@@ -71,5 +71,9 @@ return [
     'logout' => 'Abmelden',
     'submit' => 'Absenden',
     'cancel' => 'Abbrechen',
-
+    'edit' => 'Bearbeiten',
+    'select' => 'Auswählen',
+    'delete' => 'Löschen',
+    'search' => 'Suchen',
+    'create' => 'Erstellen',
 ];
