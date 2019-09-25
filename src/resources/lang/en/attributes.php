@@ -47,7 +47,7 @@ return [
 
     // Additional attributes corresponding to the
     // hCard format (http://microformats.org/wiki/hcard).
-    'org' => 'Organisation',
+    'org' => 'Company Name',
     'fn' => 'Name',
     'honorific_prefix' => 'Salutation',
     'honorific_prefix_mr' => 'Mr.',
