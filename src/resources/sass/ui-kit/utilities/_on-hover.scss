@@ -1,0 +1,25 @@
+// Animated elements on hover.
+
+.on-hover-transition {
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+
+    &:hover, &:focus {
+        box-shadow: 0px 12px 19px -7px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.on-hover-up {
+    @extend .on-hover-transition;
+
+    &:hover, &:focus {
+        transform: translateY(-10px);
+    }
+}
+
+.on-hover-magnify {
+    @extend .on-hover-transition;
+
+    &:hover, &:focus {
+        transform: scale(1.22);
+    }
+}
