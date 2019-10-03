@@ -1,5 +1,5 @@
 .page-header{
-    background-color: $header-background;
+    background-color: $page-header-background-color;
     background-position: center center;
     background-size: cover;
     height: 100vh;
@@ -15,7 +15,6 @@
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
 
-
     &:after {
         content: '\A';
         position: absolute;
@@ -23,7 +22,7 @@
         height: 100%;
         top: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0,$page-header-background-opacity);
         opacity: 1;
         z-index: -5;
     }
@@ -32,7 +31,11 @@
         height: 30vh !important;
     }
 
-    &.page-header-small {
+    &.page-header-sm {
         height: 45vh !important;
+    }
+
+    &.page-header-md {
+        height: 65vh !important;
     }
 }

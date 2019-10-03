@@ -2,7 +2,7 @@
      id="sectionsNav">
     <div class="container">
         <div class="navbar-translate">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/" title="Home">
                 {{$navbarBrand}}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
