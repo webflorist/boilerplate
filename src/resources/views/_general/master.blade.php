@@ -2,14 +2,23 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 
+    <meta charset="utf-8">
 
     @if(!is_null(config('boilerplate.google_tag_manager_id')))
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','{{config('boilerplate.google_tag_manager_id')}}');
+    <!-- Google Tag Manager -->
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', '{{config('boilerplate.google_tag_manager_id')}}');
         </script>
         <!-- End Google Tag Manager -->
     @endisset
@@ -18,7 +27,6 @@
     <title>{{$documentTitle}}</title>
     <meta name="description" content="{{$routeNode->getData('metaDescription')}}">
 
-    <meta charset="utf-8">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,8 +42,8 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no'
-          name='viewport'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
 
     <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
@@ -50,7 +58,8 @@
 @if(!is_null(config('boilerplate.google_tag_manager_id')))
     <!-- Google Tag Manager (noscript) -->
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id={{config('boilerplate.google_tag_manager_id')}}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        <iframe src="https://www.googletagmanager.com/ns.html?id={{config('boilerplate.google_tag_manager_id')}}"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 @endif
