@@ -44,6 +44,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
+    <link rel="canonical" href="{{route_node_url()}}" />
 
     <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
