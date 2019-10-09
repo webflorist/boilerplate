@@ -5,6 +5,7 @@ namespace Webflorist\Boilerplate;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 use Webflorist\Boilerplate\Commands\BoilerplateSetupCommand;
+use Webflorist\Boilerplate\Middleware\RedirectNonWwwDomain;
 
 class BoilerplateServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,11 @@ class BoilerplateServiceProvider extends ServiceProvider
         $this->loadMigrations();
         $this->loadTranslations();
         $this->loadViews();
+
+        if (config('boilerplate.redirect_non_www_domain')) {
+            $this->addmiddleware(RedirectNonWwwDomain::class);
+        }
+
     }
 
     protected function mergeConfig()
@@ -76,4 +82,12 @@ class BoilerplateServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/resources/views', 'webflorist-boilerplate');
     }
+
+    private function addMiddleware(string $middleware)
+    {
+        if($this->app['router']->hasMiddlewareGroup('web')) {
+            $this->app['router']->pushMiddlewareToGroup('web', $middleware);
+        }
+    }
+
 }
