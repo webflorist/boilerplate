@@ -71,13 +71,13 @@
 
 <script src="{{ mix('/js/app.js') }}"></script>
 
-<script>
-    {!! Form::generateVueInstances() !!}
-</script>
-
 @isset($scripts)
     {{$scripts}}
 @endisset
+
+<script>
+    {!! Form::generateVueInstances() !!}
+</script>
 
 </body>
 
