@@ -44,6 +44,7 @@ return [
     'available' => 'verfügbar',
     'size' => 'Größe',
     'message' => 'Nachricht',
+    'vat_number' => 'UID Nummer',
 
     // Additional attributes corresponding to the
     // hCard format (http://microformats.org/wiki/hcard).

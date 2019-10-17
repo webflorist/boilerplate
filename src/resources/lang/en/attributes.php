@@ -44,6 +44,7 @@ return [
     'available' => 'available',
     'size' => 'Size',
     'message' => 'Message',
+    'vat_number' => 'VAT Number',
 
     // Additional attributes corresponding to the
     // hCard format (http://microformats.org/wiki/hcard).
