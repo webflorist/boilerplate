@@ -38,6 +38,18 @@ class BoilerplateService
         return number_format($number, $decimals, $decPoint, $thousandsSep);
     }
 
+    public function mapContextToIcon(string $context) {
+        $contextIconMapping = [
+            'success' => 'check-circle',
+            'info' => 'info-circle',
+            'danger' => 'exclamation-circle'
+        ];
+        if (isset($contextIconMapping[$context])) {
+            return $contextIconMapping[$context];
+        }
+        return 'info-circle';
+    }
+
     /**
      * @return string
      */
