@@ -25,7 +25,7 @@
 
     @php($routeNode = route_tree()->getCurrentNode())
     <title>{{$documentTitle}}</title>
-    <meta name="description" content="{{$routeNode->getData('metaDescription')}}">
+    <meta name="description" content="{{$routeNode->payload->get('description')}}">
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -54,7 +54,7 @@
 
 </head>
 
-<body class="{{$routeNode->getData('bodyClass')}}">
+<body class="{{$routeNode->payload->get('bodyClass')}}">
 
 @if(!is_null(config('boilerplate.google_tag_manager_id')))
     <!-- Google Tag Manager (noscript) -->

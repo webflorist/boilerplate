@@ -10,11 +10,11 @@
     @slot('navbarNav')
         <ul class="navbar-nav ml-auto">
             @foreach(route_tree()->getRootNode()->getChildNodes() as $routeNode)
-                @if($routeNode->getData('isMainNavItem'))
+                @if($routeNode->payload->isMainNavItem)
                     <li class="nav-item">
                         <a href="{{$routeNode->getUrl()}}" class="nav-link" data-toggle="tooltip"
-                           title="{{$routeNode->getData('title')}}">
-                            {{$routeNode->getNavTitle()}}
+                           title="{{$routeNode->payload->getTitle()}}">
+                            {{$routeNode->payload->getNavTitle()}}
                         </a>
                     </li>
                 @endif

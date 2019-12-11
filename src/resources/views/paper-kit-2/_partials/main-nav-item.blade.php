@@ -1,7 +1,7 @@
 @if($routeNode->hasChildNodes())
     <li class="dropdown nav-item">
         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-            {{$routeNode->getTitle()}}
+            {{$routeNode->payload->getTitle()}}
         </a>
         <div class="dropdown-menu dropdown-with-icons">
             <a href="../presentation.html" class="dropdown-item">
@@ -18,8 +18,8 @@
     </li>
 @else
     <li class="nav-item">
-        <a href="{{$routeNode->getUrl()}}" class="nav-link" data-toggle="tooltip" title="{{$routeNode->getData('title')}}">
-            {{$routeNode->getNavTitle()}}
+        <a href="{{$routeNode->getUrl()}}" class="nav-link" data-toggle="tooltip" title="{{$routeNode->payload->getTitle()}}">
+            {{$routeNode->payload->getNavTitle()}}
         </a>
     </li>
 @endif

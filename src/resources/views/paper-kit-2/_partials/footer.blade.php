@@ -3,10 +3,10 @@
         <nav class="float-left">
             <ul>
                 @foreach(route_tree()->getRootNode()->getChildNodes() as $routeNode)
-                    @if($routeNode->getData('isFooterNavItem'))
+                    @if($routeNode->payload->isFooterNavItem)
                         <li>
-                            <a href="{{$routeNode->getUrl()}}" title="{{$routeNode->getData('title')}}">
-                                {{$routeNode->getNavTitle()}}
+                            <a href="{{$routeNode->getUrl()}}" title="{{$routeNode->payload->getTitle()}}">
+                                {{$routeNode->payload->getNavTitle()}}
                             </a>
                         </li>
                     @endif
