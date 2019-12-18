@@ -77,4 +77,12 @@ return [
     'delete' => 'Löschen',
     'search' => 'Suchen',
     'create' => 'Erstellen',
+
+    // Various legal notice attributes.
+    'legal_form' => 'Rechtsform',
+    'legal_form_sole_proprietorship' => 'Einzelunternehmen',
+    'business_purpose' => 'Unternehmensgegenstand',
+    'business_purpose_advertising_agency' => 'Werbeagentur',
+    'professional_association' => 'Berufsverband',
+    'supervisory_authority' => 'Aufsichtsbehörde'
 ];

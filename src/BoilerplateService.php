@@ -21,6 +21,11 @@ class BoilerplateService
         return include "$vendorFolder/umpirsky/country-list/data/$locale/country.php";
     }
 
+    public function getCountryName(string $countryCode, ?string $locale = null): string
+    {
+        return $this->getCountryList($locale)[$countryCode];
+    }
+
     public function getLanguageList(string $locale = null): array
     {
         if (is_null($locale)) {

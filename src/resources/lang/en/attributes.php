@@ -78,4 +78,12 @@ return [
     'search' => 'Search',
     'create' => 'Create',
 
+    // Various legal notice attributes.
+    'legal_form' => 'Legal Form',
+    'legal_form_sole_proprietorship' => 'Sole Proprietorship',
+    'business_purpose' => 'Business Purpose',
+    'business_purpose_advertising_agency' => 'Advertising Agency',
+    'professional_association' => 'Professional Association',
+    'supervisory_authority' => 'Supervisory Authority'
+
 ];

@@ -5,8 +5,8 @@
                 @foreach(route_tree()->getRootNode()->getChildNodes() as $routeNode)
                     @if($routeNode->payload->isFooterNavItem)
                         <li>
-                            <a href="{{$routeNode->getUrl()}}" title="{{$routeNode->payload->getTitle()}}">
-                                {{$routeNode->payload->getNavTitle()}}
+                            <a href="{{$routeNode->getUrl()}}" title="{{$routeNode->getTitle()}}">
+                                {{$routeNode->getNavTitle()}}
                             </a>
                         </li>
                     @endif

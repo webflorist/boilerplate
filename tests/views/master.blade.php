@@ -13,8 +13,8 @@
                 @if($routeNode->payload->isMainNavItem)
                     <li class="nav-item">
                         <a href="{{$routeNode->getUrl()}}" class="nav-link" data-toggle="tooltip"
-                           title="{{$routeNode->payload->getTitle()}}">
-                            {{$routeNode->payload->getNavTitle()}}
+                           title="{{$routeNode->getTitle()}}">
+                            {{$routeNode->getNavTitle()}}
                         </a>
                     </li>
                 @endif
