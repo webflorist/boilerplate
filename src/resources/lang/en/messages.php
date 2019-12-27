@@ -116,4 +116,5 @@ return [
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
 
+    'media_not_found' => 'Stored file not found. Maybe it was already deleted.'
 ];

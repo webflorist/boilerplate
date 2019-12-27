@@ -115,4 +115,6 @@ return [
     'url'                  => ':attribute muss eine URL sein.',
     'uuid'                 => ':attribute muss ein UUID sein.',
 
+    'media_not_found' => 'Gespeicherte Datei wurde nicht gefunden. Eventuell wurde sie bereits gelöscht.'
+
 ];

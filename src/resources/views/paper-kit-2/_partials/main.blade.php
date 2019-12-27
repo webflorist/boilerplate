@@ -1,3 +1,3 @@
-<main class="main @if($mainRaised ?? false) main-raised @endif">
+<main class="main @if($mainRaised ?? false) main-raised @endif {{$mainClass ?? ''}}">
     {{$mainContent}}
 </main>

@@ -84,5 +84,7 @@ return [
     'business_purpose' => 'Unternehmensgegenstand',
     'business_purpose_advertising_agency' => 'Werbeagentur',
     'professional_association' => 'Berufsverband',
-    'supervisory_authority' => 'Aufsichtsbehörde'
+    'supervisory_authority' => 'Aufsichtsbehörde',
+
+    'keywords' => 'Schlagworte',
 ];

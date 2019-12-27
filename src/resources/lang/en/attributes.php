@@ -84,6 +84,8 @@ return [
     'business_purpose' => 'Business Purpose',
     'business_purpose_advertising_agency' => 'Advertising Agency',
     'professional_association' => 'Professional Association',
-    'supervisory_authority' => 'Supervisory Authority'
+    'supervisory_authority' => 'Supervisory Authority',
+
+    'keywords' => 'Keywords',
 
 ];
