@@ -11,6 +11,6 @@ class MediaLibraryPathGenerator extends BasePathGenerator
      */
     protected function getBasePath(Media $media): string
     {
-        return 'media/'.$media->id;
+        return config('boilerplate.media_base_path').'/'.$media->id;
     }
 }

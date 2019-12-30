@@ -21,6 +21,16 @@ return [
     | Set the Google Tag Manager ID.
     |
     */
-    'google_tag_manager_id' => env('GOOGLE_TAG_MANAGER_ID', null)
+    'google_tag_manager_id' => env('GOOGLE_TAG_MANAGER_ID', null),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Media Base Path
+    |--------------------------------------------------------------------------
+    |
+    | Set the base path of media from spatie/medialibrary
+    |
+    */
+    'media_base_path' => env('MEDIA_BASE_PATH', 'media')
 
 ];
