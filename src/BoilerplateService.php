@@ -35,6 +35,11 @@ class BoilerplateService
         return include "$vendorFolder/umpirsky/language-list/data/$locale/language.php";
     }
 
+    public function getLanguageName(string $languageLocale, string $resultLocale = null): string
+    {
+        return $this->getLanguageList($resultLocale)[$languageLocale];
+    }
+
     public function formatNumber(int $number, int $decimals = 0): string
     {
         $locale = app()->getLocale();
