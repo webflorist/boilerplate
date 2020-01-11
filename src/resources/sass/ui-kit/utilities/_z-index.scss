@@ -1,0 +1,9 @@
+.to-front {
+    z-index: 100000;
+}
+
+.on-hover-to-front {
+    &:hover, &:focus {
+        z-index: 100000;
+    }
+}
