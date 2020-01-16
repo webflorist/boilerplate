@@ -8,20 +8,37 @@
 
     var cookieAlert = document.querySelector(".cookiealert");
     var acceptCookies = document.querySelector(".acceptcookies");
+    var declineCookies = document.querySelector(".declinecookies");
+    let cookieAccepted = getCookie("acceptCookies");
 
     cookieAlert.offsetHeight; // Force browser to trigger reflow (https://stackoverflow.com/a/39451131)
 
     // Show the alert if we cant find the "acceptCookies" cookie
-    if (!getCookie("acceptCookies")) {
+    if (!cookieAccepted) {
         cookieAlert.classList.add("show");
     }
 
-    // When clicking on the agree button, create a 1 year
+    // Init Google Analytics, if cookies were accepted.
+    if (cookieAccepted === 'true') {
+        initGoogleAnalytics();
+    }
+
+    // When clicking on the agree or disagree button, create a 1 year
     // cookie to remember user's choice and close the banner
     acceptCookies.addEventListener("click", function () {
-        setCookie("acceptCookies", true, 365);
-        cookieAlert.classList.remove("show");
+        makeCookieChoice(true);
     });
+    declineCookies.addEventListener("click", function () {
+        makeCookieChoice(false);
+    });
+
+    function makeCookieChoice(accepted) {
+        setCookie("acceptCookies", accepted, 365);
+        cookieAlert.classList.remove("show");
+        if (accepted === true) {
+            initGoogleAnalytics();
+        }
+    }
 
     // Cookie functions from w3schools
     function setCookie(cname, cvalue, exdays) {

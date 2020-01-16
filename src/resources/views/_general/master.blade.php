@@ -23,6 +23,21 @@
         <!-- End Google Tag Manager -->
     @endisset
 
+    @if(!is_null(config('boilerplate.google_analytics_tracking_id')))
+        <script>
+            function initGoogleAnalytics(){
+                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+                ga('create', '{{config('boilerplate.google_analytics_tracking_id')}}', 'auto');
+                ga('set', 'anonymizeIp', true);
+                ga('send', 'pageview');
+                var gascript = document.createElement("script");
+                gascript.async = true;
+                gascript.src = "https://www.google-analytics.com/analytics.js";
+                document.getElementsByTagName("head")[0].appendChild(gascript, document.getElementsByTagName("head")[0]);
+            }
+        </script>
+    @endisset
+
     @php($routeNode = route_tree()->getCurrentNode())
     <title>{{$documentTitle}}</title>
     <meta name="description" content="{{$routeNode->payload->get('description')}}">
