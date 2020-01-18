@@ -9,7 +9,7 @@
 $font-family-sans-serif: $body-font, 'Helvetica', 'Arial', sans-serif !default;
 $headings-font-family: $header-font, 'Times New Roman', serif !default;
 $font-family-serif: $headings-font-family;
-@import url('https://fonts.googleapis.com/css?family=#{str-replace($body-font,' ','+')}:300,400,500,700|#{str-replace($header-font,' ','+')}:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=#{str-replace($body-font,' ','+')}:300,400,500,700|#{str-replace($header-font,' ','+')}:400,700&display=swap');
 
 // Set Bootstrap Color Variables
 $primary: $color-primary !default;
