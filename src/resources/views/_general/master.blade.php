@@ -23,9 +23,9 @@
         <!-- End Google Tag Manager -->
     @endisset
 
-    @if(!is_null(config('boilerplate.google_analytics_tracking_id')))
-        <script>
-            function initGoogleAnalytics(){
+    <script>
+        function initGoogleAnalytics(){
+            @if(!is_null(config('boilerplate.google_analytics_tracking_id')))
                 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
                 ga('create', '{{config('boilerplate.google_analytics_tracking_id')}}', 'auto');
                 ga('set', 'anonymizeIp', true);
@@ -34,9 +34,9 @@
                 gascript.async = true;
                 gascript.src = "https://www.google-analytics.com/analytics.js";
                 document.getElementsByTagName("head")[0].appendChild(gascript, document.getElementsByTagName("head")[0]);
-            }
-        </script>
-    @endisset
+            @endisset
+        }
+    </script>
 
     @php($routeNode = route_tree()->getCurrentNode())
     <title>{{$documentTitle}}</title>
