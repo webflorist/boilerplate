@@ -56,5 +56,10 @@ if (token) {
 // });
 
 
+require('../../../../../../resources/paper-kit-2/assets/js/all');
+
+window.Vue = require('vue');
+
+require('./vue-helpers');
 require('./cookie-consent');
 require('./smooth-scroll-to-anchor');
