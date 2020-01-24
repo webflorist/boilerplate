@@ -1,3 +1,9 @@
+@php
+    $locale = null;
+    if (config('boilerplate.privacy_policy_en_only')) {
+        $locale = 'en';
+    }
+@endphp
 @component('templates.page')
 
     @slot('mainContent')
@@ -6,168 +12,175 @@
                 <div class="row justify-content-center">
                     <div class="col col-md-10">
 
-                        {!! __('webflorist-boilerplate::privacy-policy.intro') !!}
+                        {!! __('webflorist-boilerplate::privacy-policy.intro', [], $locale) !!}
 
-                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.rights_header') !!}</h2>
+                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.rights_header', [], $locale) !!}</h2>
 
-                        {!! __('webflorist-boilerplate::privacy-policy.rights') !!}
+                        {!! __('webflorist-boilerplate::privacy-policy.rights', [], $locale) !!}
 
-                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.security_header') !!}</h2>
+                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.security_header', [], $locale) !!}</h2>
 
-                        {!! __('webflorist-boilerplate::privacy-policy.security') !!}
+                        {!! __('webflorist-boilerplate::privacy-policy.security', [], $locale) !!}
 
-                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.cookies_header') !!}</h2>
+                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.cookies_header', [], $locale) !!}</h2>
 
-                        {!! __('webflorist-boilerplate::privacy-policy.cookies') !!}
-
-                        <p>
-                            {!! __('webflorist-boilerplate::privacy-policy.first_party_cookies_intro') !!}
-                        </p>
-
-                        <table class="table table-responsive">
-                            <thead>
-                                <tr>
-                                    <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_name')}}</th>
-                                    <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_purpose')}}</th>
-                                    <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_written_on')}}</th>
-                                    <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_duration')}}</th>
-                                </tr>
-                                @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
-                                    'name' => config('session.cookie'),
-                                    'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_session'),
-                                    'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_every_visit'),
-                                    'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_end_of_session'),
-                                ])
-                                @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
-                                    'name' => 'acceptTestPhase',
-                                    'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_accept_test_phase'),
-                                    'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_accept_test_phase'),
-                                    'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_1_year'),
-                                ])
-                                @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
-                                    'name' => 'acceptCookies',
-                                    'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_accept_cookies'),
-                                    'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_accept_cookies'),
-                                    'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_1_year'),
-                                ])
-                            </thead>
-
-                        </table>
+                        {!! __('webflorist-boilerplate::privacy-policy.cookies', [], $locale) !!}
 
                         <p>
-                            {!! __('webflorist-boilerplate::privacy-policy.third_party_cookies_intro') !!}
+                            {!! __('webflorist-boilerplate::privacy-policy.first_party_cookies_intro', [], $locale) !!}
                         </p>
 
                         <table class="table table-responsive">
                             <thead>
                             <tr>
-                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_name')}}</th>
-                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_purpose')}}</th>
-                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_origin')}}</th>
-                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_written_on')}}</th>
-                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_duration')}}</th>
+                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_name', [], $locale)}}</th>
+                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_purpose', [], $locale)}}</th>
+                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_written_on', [], $locale)}}</th>
+                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_duration', [], $locale)}}</th>
+                            </tr>
+                            @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
+                                'name' => config('session.cookie'),
+                                'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_session', [], $locale),
+                                'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_every_visit', [], $locale),
+                                'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_end_of_session', [], $locale),
+                            ])
+                            @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
+                                'name' => 'XSRF-TOKEN',
+                                'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_xsrf', [], $locale),
+                                'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_every_visit', [], $locale),
+                                'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_end_of_session', [], $locale),
+                            ])
+                            @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
+                                'name' => 'acceptCookies',
+                                'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_accept_cookies', [], $locale),
+                                'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_accept_cookies', [], $locale),
+                                'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_1_year', [], $locale),
+                            ])
+                            @if(config('boilerplate.privacy_policy_test_phase'))
+                                @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
+                                    'name' => 'acceptTestPhase',
+                                    'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_accept_test_phase', [], $locale),
+                                    'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_accept_test_phase', [], $locale),
+                                    'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_1_year', [], $locale),
+                                ])
+                            @endif
+                            </thead>
+
+                        </table>
+
+                        <p>
+                            {!! __('webflorist-boilerplate::privacy-policy.third_party_cookies_intro', [], $locale) !!}
+                        </p>
+
+                        <table class="table table-responsive">
+                            <thead>
+                            <tr>
+                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_name', [], $locale)}}</th>
+                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_purpose', [], $locale)}}</th>
+                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_origin', [], $locale)}}</th>
+                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_written_on', [], $locale)}}</th>
+                                <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_duration', [], $locale)}}</th>
                             </tr>
                             @include('webflorist-boilerplate::privacy-policy._partials.third_party_cookie', [
                                 'name' => '_ga<br>_gat<br>_gid',
-                                'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_google_analytics'),
-                                'origin' => __('webflorist-boilerplate::privacy-policy.cookie_origin_google_analytics'),
-                                'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_accept_corresponding_cookies'),
-                                'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_2_years').'<br>'.__('webflorist-boilerplate::privacy-policy.cookie_duration_24_hours').'<br>'.__('webflorist-boilerplate::privacy-policy.cookie_duration_1_minute'),
+                                'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_google_analytics', [], $locale),
+                                'origin' => __('webflorist-boilerplate::privacy-policy.cookie_origin_google_analytics', [], $locale),
+                                'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_accept_corresponding_cookies', [], $locale),
+                                'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_2_years', [], $locale).'<br>'.__('webflorist-boilerplate::privacy-policy.cookie_duration_24_hours', [], $locale).'<br>'.__('webflorist-boilerplate::privacy-policy.cookie_duration_1_minute', [], $locale),
                             ])
                             </thead>
 
                         </table>
 
                         <p>
-                            {!! __('webflorist-boilerplate::privacy-policy.cookie_settings_intro') !!}
+                            {!! __('webflorist-boilerplate::privacy-policy.cookie_settings_intro', [], $locale) !!}
                         </p>
 
                         @include('webflorist-boilerplate::privacy-policy._partials.cookie-settings')
 
-                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.data_collection_and_usage_header') !!}</h2>
+                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.data_collection_and_usage_header', [], $locale) !!}</h2>
 
-                        <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.log_data_header') !!}</h3>
+                        <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.log_data_header', [], $locale) !!}</h3>
+                        {!! __('webflorist-boilerplate::privacy-policy.log_data', [], $locale) !!}
 
-                        {!! __('webflorist-boilerplate::privacy-policy.log_data') !!}
+                        <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.website_analytics_header', [], $locale) !!}</h3>
+                        {!! __('webflorist-boilerplate::privacy-policy.website_analytics', [], $locale) !!}
 
-                        <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.website_analytics_header') !!}</h3>
+                        <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.contact_form_header', [], $locale) !!}</h3>
+                        {!! __('webflorist-boilerplate::privacy-policy.contact_form', [], $locale) !!}
 
-                        {!! __('webflorist-boilerplate::privacy-policy.website_analytics') !!}
+                        @if(config('boilerplate.privacy_policy_user_accounts'))
+                            <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.user_accounts_header', [], $locale) !!}</h3>
+                            {!! __('webflorist-boilerplate::privacy-policy.user_accounts', [], $locale) !!}
+                        @endif
 
-                        <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.contact_form_header') !!}</h3>
+                        @if(config('boilerplate.privacy_policy_subscription_payment'))
+                            <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.subscription_and_payment_header', [], $locale) !!}</h3>
+                            {!! __('webflorist-boilerplate::privacy-policy.subscription_and_payment', [], $locale) !!}
+                        @endif
 
-                        {!! __('webflorist-boilerplate::privacy-policy.contact_form') !!}
+                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.outgoing_links_header', [], $locale) !!}</h2>
+                        {!! __('webflorist-boilerplate::privacy-policy.outgoing_links', [], $locale) !!}
 
-                        <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.user_accounts_header') !!}</h3>
+                        @if(config('boilerplate.privacy_policy_childrens_privacy'))
+                            <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.childrens_privacy_header', [], $locale) !!}</h2>
+                            {!! __('webflorist-boilerplate::privacy-policy.childrens_privacy', [], $locale) !!}
+                        @endif
 
-                        {!! __('webflorist-boilerplate::privacy-policy.user_accounts') !!}
-
-                        <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.subscription_and_payment_header') !!}</h3>
-
-                        {!! __('webflorist-boilerplate::privacy-policy.subscription_and_payment') !!}
-
-                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.outgoing_links_header') !!}</h2>
-
-                        {!! __('webflorist-boilerplate::privacy-policy.outgoing_links') !!}
-
-                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.childrens_privacy_header') !!}</h2>
-
-                        {!! __('webflorist-boilerplate::privacy-policy.childrens_privacy') !!}
-
-
-                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.subprocessors_header') !!}</h2>
-
+                        <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.subprocessors_header', [], $locale) !!}</h2>
                         <ul>
                             @include('webflorist-boilerplate::privacy-policy._partials.subprocessor', [
                                 'company' => 'Google Ireland Limited',
                                 'address' => 'Gordon House, Barrow Street, Dublin 4, Ireland, EU',
-                                'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_google'),
+                                'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_google', [], $locale),
                                 'categories' => [
-                                    __('webflorist-boilerplate::privacy-policy.data_category.inventory_data'),
-                                    __('webflorist-boilerplate::privacy-policy.data_category.usage_data'),
-                                    __('webflorist-boilerplate::privacy-policy.data_category.usage_statistics')
+                                    __('webflorist-boilerplate::privacy-policy.data_category.inventory_data', [], $locale),
+                                    __('webflorist-boilerplate::privacy-policy.data_category.usage_data', [], $locale),
+                                    __('webflorist-boilerplate::privacy-policy.data_category.usage_statistics', [], $locale)
                                 ],
                                 'privacy_policy' => 'https://policies.google.com/privacy'
                             ])
                             @include('webflorist-boilerplate::privacy-policy._partials.subprocessor', [
                                 'company' => 'Twilio Sendgrid Inc.',
                                 'address' => '1801 California St #500 Denver, CO 80202, USA',
-                                'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_send_emails'),
+                                'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_send_emails', [], $locale),
                                 'categories' => [
-                                    __('webflorist-boilerplate::privacy-policy.data_category.inventory_data'),
-                                    __('webflorist-boilerplate::privacy-policy.data_category.contract_data')
+                                    __('webflorist-boilerplate::privacy-policy.data_category.inventory_data', [], $locale),
+                                    __('webflorist-boilerplate::privacy-policy.data_category.contract_data', [], $locale)
                                 ],
                                 'privacy_policy' => 'https://www.twilio.com/legal/privacy'
                             ])
-                            @include('webflorist-boilerplate::privacy-policy._partials.subprocessor', [
-                                'company' => 'Chargebee Inc.',
-                                'address' => '340 S Lemon Avenue, #1537, Walnut, California 91789, USA',
-                                'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_chargebee'),
-                                'categories' => [
-                                    __('webflorist-boilerplate::privacy-policy.data_category.inventory_data'),
-                                    __('webflorist-boilerplate::privacy-policy.data_category.contract_data'),
-                                    __('webflorist-boilerplate::privacy-policy.data_category.payment_data')
-                                ],
-                                'privacy_policy' => 'https://www.chargebee.com/privacy/'
-                            ])
-                            @include('webflorist-boilerplate::privacy-policy._partials.subprocessor', [
-                                'company' => 'PayPal (Europe) S.a.r.l. et Cie',
-                                'address' => 'S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg, EU',
-                                'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_paypal'),
-                                'categories' => [
-                                    __('webflorist-boilerplate::privacy-policy.data_category.payment_data')
-                                ],
-                                'privacy_policy' => 'https://www.paypal.com/va/webapps/mpp/ua/privacy-full'
-                            ])
-                            @include('webflorist-boilerplate::privacy-policy._partials.subprocessor', [
-                                'company' => 'Stripe Inc.',
-                                'address' => '185 Berry Street, Suite 550, San Francisco, CA 94107, USA',
-                                'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_stripe'),
-                                'categories' => [
-                                    __('webflorist-boilerplate::privacy-policy.data_category.payment_data')
-                                ],
-                                'privacy_policy' => 'https://stripe.com/at/privacy'
-                            ])
+                            @if(config('boilerplate.privacy_policy_subscription_payment'))
+                                @include('webflorist-boilerplate::privacy-policy._partials.subprocessor', [
+                                    'company' => 'Chargebee Inc.',
+                                    'address' => '340 S Lemon Avenue, #1537, Walnut, California 91789, USA',
+                                    'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_chargebee', [], $locale),
+                                    'categories' => [
+                                        __('webflorist-boilerplate::privacy-policy.data_category.inventory_data', [], $locale),
+                                        __('webflorist-boilerplate::privacy-policy.data_category.contract_data', [], $locale),
+                                        __('webflorist-boilerplate::privacy-policy.data_category.payment_data', [], $locale)
+                                    ],
+                                    'privacy_policy' => 'https://www.chargebee.com/privacy/'
+                                ])
+                                @include('webflorist-boilerplate::privacy-policy._partials.subprocessor', [
+                                    'company' => 'PayPal (Europe) S.a.r.l. et Cie',
+                                    'address' => 'S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg, EU',
+                                    'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_paypal', [], $locale),
+                                    'categories' => [
+                                        __('webflorist-boilerplate::privacy-policy.data_category.payment_data', [], $locale)
+                                    ],
+                                    'privacy_policy' => 'https://www.paypal.com/va/webapps/mpp/ua/privacy-full'
+                                ])
+                                @include('webflorist-boilerplate::privacy-policy._partials.subprocessor', [
+                                    'company' => 'Stripe Inc.',
+                                    'address' => '185 Berry Street, Suite 550, San Francisco, CA 94107, USA',
+                                    'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_stripe', [], $locale),
+                                    'categories' => [
+                                        __('webflorist-boilerplate::privacy-policy.data_category.payment_data', [], $locale)
+                                    ],
+                                    'privacy_policy' => 'https://stripe.com/at/privacy'
+                                ])
+                            @endif
                         </ul>
 
 
@@ -209,8 +222,8 @@
                     this.currentSetting = this.getCookie('acceptCookies');
                     this.icon = this.getSettingIcon(this.currentSetting);
                 },
-                watch:  {
-                    currentSetting: function() {
+                watch: {
+                    currentSetting: function () {
                         this.icon = this.getSettingIcon(this.currentSetting);
                     }
                 }

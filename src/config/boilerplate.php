@@ -15,6 +15,39 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Privacy Policy Formality
+    |--------------------------------------------------------------------------
+    |
+    | Set the salutation (formal/informal) for privacy policy.
+    |
+    */
+    'privacy_policy_salutation' => 'formal',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Privacy Policy Content
+    |--------------------------------------------------------------------------
+    |
+    | Enable/disable certain specific content for the privacy policy.
+    |
+    */
+    'privacy_policy_test_phase' => false,
+    'privacy_policy_user_accounts' => false,
+    'privacy_policy_subscription_payment' => false,
+    'privacy_policy_childrens_privacy' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Privacy Policy English only
+    |--------------------------------------------------------------------------
+    |
+    | Make the privacy policy english only.
+    |
+    */
+    'privacy_policy_en_only' => false,
+
+    /*
+    |--------------------------------------------------------------------------
     | Privacy Contact E-Mail
     |--------------------------------------------------------------------------
     |

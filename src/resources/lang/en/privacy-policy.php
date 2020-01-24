@@ -64,14 +64,14 @@ return [
     'cookie_duration' => 'Duration',
     'cookie_origin' => 'Origin',
 
-    'cookie_purpose_session' => 'The so called &quot;Session” cookie allows us to store and retrieve information about your current visit (e.g. the selected language or login-state).',
-    'cookie_purpose_xsrf' => 'A security-related cookie used to prevent so called &quot;Cross-Site Request Forgery” attacks.	',
+    'cookie_purpose_session' => 'The so called "Session" cookie allows us to store and retrieve information about your current visit (e.g. the selected language or login-state).',
+    'cookie_purpose_xsrf' => 'A security-related cookie used to prevent so called "Cross-Site Request Forgery" attacks.',
     'cookie_purpose_accept_test_phase' => 'On your first visit on our website during its test phase, a warning will be displayed. The purpose of this cookie is to display that warning only on your first visit.',
     'cookie_purpose_accept_cookies' => 'Stores your choice of the cookie dialog displayed on your first visit and stops the website from asking you again.',
     'cookie_purpose_google_analytics' => 'These cookies are written by Google Analytics which allows us understand and improve user experience and is used for statistical purposes. (For more info see the Google Analytics section below.)',
 
     'cookie_written_on_every_visit' => 'Every visit',
-    'cookie_written_on_accept_test_phase' => 'Acknowledging the &quot;Test Operation” dialog popping up on your first visit to our website during its test phase',
+    'cookie_written_on_accept_test_phase' => 'Acknowledging the "Test Operation" dialog popping up on your first visit to our website during its test phase',
     'cookie_written_on_accept_cookies' => 'Clicking one of the choices in the cookie notification dialog popping up on your first visit to our website',
     'cookie_written_on_accept_corresponding_cookies' => 'Accepting the corresponding cookie notification as well as on subsequent visits',
 
@@ -108,13 +108,13 @@ return [
         </p>
     ',
 
-    'website_analytics_header' => 'Website Analytics',
+    'website_analytics_header' => 'Web Analytics',
     'website_analytics' => '
         <p>
-            If you accept Google Analytics in the cookie notification, our website will forward log data to Google Analytics as well (also provided by <strong>Google Ireland Limited</strong>). This service is used to track and report website traffic for statistical purposes and to understand and improve how visitors are using our website. Any collected data will be anonymized (by deleting part of your IP address) and might be stored in the European Union or the United States. Any data will be processed according to the &quot;Privacy Shield&quot; agreement between EU und USA and based on a data processing contract between us and <strong>Google Ireland Limited</strong>. Data will be stored for the duration 26 months.
+            If you accept Web Analytics in the cookie notification, our website will forward log data to Google Analytics as well (also provided by <strong>Google Ireland Limited</strong>). This service is used to track and report website traffic for statistical purposes and to understand and improve how visitors are using our website. Any collected data will be pseudonymized (by deleting part of your IP address) and might be stored in the European Union or the United States. Any data will be processed according to the &quot;Privacy Shield&quot; agreement between EU und USA and based on a data processing contract between us and <strong>Google Ireland Limited</strong>. Data will be stored for the duration 26 months.
         </p>
         <p>
-            Please note, that no data will be transferred to Google Analytics at all, if you do not explicitly accept the cookie notification visible on the bottom of the page on your first visit. Data processing is therefor according to Article 6 (1a) of the GDPR.
+            Please note, that no data will be transferred to Google Analytics at all, if you do not explicitly accept the cookie notification visible on the bottom of the page on your first visit (&quot;OPT-IN&quot;). Data processing is therefor according to Article 6 (1a) of the GDPR.
         </p>
     ',
 
