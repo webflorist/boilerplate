@@ -35,6 +35,7 @@ return [
     'privacy_policy_user_accounts' => false,
     'privacy_policy_subscription_payment' => false,
     'privacy_policy_childrens_privacy' => false,
+    'privacy_policy_google_maps' => false,
 
     /*
     |--------------------------------------------------------------------------
