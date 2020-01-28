@@ -31,11 +31,11 @@
                 if (!this.show && !this.isGoogleMapsAccepted()) {
                     return Swal.fire({
                         title: 'Google Maps',
-                        html: '<p>Zur Darstellung der Karte wird der Dienst "Google Maps" des Dritt-Anbieters "Google Inc." verwendet. Ist das OK für Sie?</p><p>Wenn Sie zustimmen, werden Google Maps bezogene Cookies gesetzt und Datenverarbeitungen vorgenommen.</p><p>Mehr Informationen finden Sie in der <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>! Dort können Sie Ihre Auswahl auch jederzeit widerrufen.</p>',
-                        icon: "warning",
+                        html: '<p>Zur Darstellung der Karte wird der Dienst "Google Maps" des Dritt-Anbieters "Google Inc." verwendet. Ist das OK für Sie?</p><hr><p class="small">Wenn Sie zustimmen, werden Google Maps bezogene Cookies gesetzt und Datenverarbeitungen vorgenommen.</p><p class="small">Mehr Informationen finden Sie in der <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>! Dort können Sie Ihre Auswahl auch jederzeit widerrufen.</p>',
+                        icon: "question",
                         showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
+                        confirmButtonColor: "#28a745",
+                        cancelButtonColor: "#616161",
                         confirmButtonText: "OK",
                         cancelButtonText: "Abbrechen (Karte nicht anzeigen)"
                     }).then((result) => {
