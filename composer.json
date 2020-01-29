@@ -9,16 +9,16 @@
     ],
     "require": {
         "php": "~7.1",
-        "laravel/framework": "~5.8",
+        "laravel/framework": ">=5.8",
         "google/cloud-error-reporting": "^0.14.5",
         "google/cloud-logging": "^1.16",
-        "webflorist/htmlfactory": "dev-develop",
         "webflorist/routetree": "^2.0",
         "umpirsky/country-list": "^2.0",
         "umpirsky/language-list": "^1.0"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.8",
+        "webflorist/htmlfactory": "dev-develop",
+        "orchestra/testbench": ">=3.8",
         "gajus/dindent": "^2.0",
         "ext-dom": "*"
     },
