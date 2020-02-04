@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-color-on-scroll navbar-transparent fixed-top" color-on-scroll="100"
+<nav class="navbar {{($collapseNavbar ?? true) ? 'navbar-expand-lg' : 'navbar-expand'}} navbar-color-on-scroll navbar-transparent fixed-top" color-on-scroll="100"
      id="sectionsNav">
     <div class="container">
         <div class="navbar-translate">
@@ -11,7 +11,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="{{($collapseNavbar ?? true) ? 'collapse navbar-collapse' : ''}}">
             {{$navbarNav}}
         </div>
     </div>
