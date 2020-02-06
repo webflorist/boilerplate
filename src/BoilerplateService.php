@@ -66,10 +66,23 @@ class BoilerplateService
     private function getVendorFolder(): string
     {
         $vendorFolder = base_path('vendor');
-        if (app()->environment() === 'testing') {
+        if ($this->isPackageTest()) {
             $vendorFolder = dirname(__DIR__) . '/vendor';
         }
         return $vendorFolder;
+    }
+
+    /**
+     * @return bool
+     */
+    private function isPackageTest(): bool
+    {
+        if (app()->environment() !== 'testing') {
+            return false;
+        }
+
+        return base_path('vendor/webflorist/boilerplate') !== dirname(__DIR__);
+
     }
 
 }

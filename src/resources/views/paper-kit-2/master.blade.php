@@ -1,5 +1,6 @@
 @component('webflorist-boilerplate::_general.master', [
-    'documentTitle' => $documentTitle
+    'documentTitle' => $documentTitle,
+    'favIcons' => $favIcons ?? true
 ])
 
     @isset($head)
