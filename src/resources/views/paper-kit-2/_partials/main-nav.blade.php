@@ -1,6 +1,6 @@
 <nav class="navbar {{($collapseNavbar ?? true) ? 'navbar-expand-lg' : 'navbar-expand'}} navbar-color-on-scroll navbar-transparent fixed-top" color-on-scroll="20"
      id="sectionsNav">
-    <div class="container">
+    <div class="{{($fluidNavbar ?? false) ? 'container-fluid px-md-5' : 'container'}}">
         <div class="navbar-translate">
             <a class="navbar-brand" href="{{route_node_url('')}}" title="Home">
                 {{$navbarBrand}}

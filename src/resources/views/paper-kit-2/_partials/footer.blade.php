@@ -1,5 +1,5 @@
 <footer class="footer footer-default">
-    <div class="container">
+    <div class="{{($fluidFooter ?? false) ? 'container-fluid px-md-5' : 'container'}}">
         <nav class="float-left">
             <ul>
                 @foreach(route_tree()->getRootNode()->getChildNodes() as $routeNode)
