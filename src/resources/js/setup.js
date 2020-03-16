@@ -23,15 +23,3 @@ if (token) {
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
-
-// Setup Sweetalert2
-window.Swal = require('sweetalert2');
-
-window.Vue = require('vue');
-
-require('./vue-helpers');
-require('./cookie-consent');
-require('./smooth-scroll-to-anchor');
-
-const files = require.context('./', true, /\.vue$/i);
-files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));

@@ -40,7 +40,7 @@
 
     @php($routeNode = route_tree()->getCurrentNode())
     <title>{{$documentTitle}}</title>
-    <meta name="description" content="{{$routeNode->payload->get('description')}}">
+    <meta name="description" content="{{$metaDescription ?? $routeNode->payload->get('description')}}">
 
     @if($favIcons ?? true)
         <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/apple-touch-icon.png')}}">
@@ -49,6 +49,11 @@
         <link rel="manifest" href="{{asset('/site.webmanifest')}}">
         <link rel="mask-icon" href="{{asset('/safari-pinned-tab.svg')}}" color="#5bbad5">
     @endif
+
+    @if($noRobots ?? false)
+        <meta name="robots" content="noindex,nofollow"/>
+    @endif
+
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
     <meta name="environment" content="{{app()->environment()}}">
