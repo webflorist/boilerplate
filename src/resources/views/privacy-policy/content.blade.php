@@ -7,15 +7,15 @@
 
 {!! __('webflorist-boilerplate::privacy-policy.intro', [], $locale) !!}
 
-<h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.rights_header', [], $locale) !!}</h2>
+<h2>{!! __('webflorist-boilerplate::privacy-policy.rights_header', [], $locale) !!}</h2>
 
 {!! __('webflorist-boilerplate::privacy-policy.rights', [], $locale) !!}
 
-<h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.security_header', [], $locale) !!}</h2>
+<h2>{!! __('webflorist-boilerplate::privacy-policy.security_header', [], $locale) !!}</h2>
 
 {!! __('webflorist-boilerplate::privacy-policy.security', [], $locale) !!}
 
-<h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.cookies_header', [], $locale) !!}</h2>
+<h2>{!! __('webflorist-boilerplate::privacy-policy.cookies_header', [], $locale) !!}</h2>
 
 {!! __('webflorist-boilerplate::privacy-policy.cookies', [], $locale) !!}
 
@@ -31,6 +31,8 @@
         <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_written_on', [], $locale)}}</th>
         <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_duration', [], $locale)}}</th>
     </tr>
+    </thead>
+    <tbody>
     @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
         'name' => config('session.cookie'),
         'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_session', [], $locale),
@@ -65,7 +67,7 @@
             'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_1_year', [], $locale),
         ])
     @endif
-    </thead>
+    </tbody>
 
 </table>
 
@@ -82,6 +84,8 @@
         <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_written_on', [], $locale)}}</th>
         <th scope="col">{{__('webflorist-boilerplate::privacy-policy.cookie_duration', [], $locale)}}</th>
     </tr>
+    </thead>
+    <tbody>
     @include('webflorist-boilerplate::privacy-policy._partials.third_party_cookie', [
         'name' => '_ga<br>_gat<br>_gid',
         'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_google_analytics', [], $locale),
@@ -98,7 +102,7 @@
             'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_various', [], $locale),
         ])
     @endif
-    </thead>
+    </tbody>
 
 </table>
 
@@ -108,41 +112,41 @@
 
 @include('webflorist-boilerplate::privacy-policy._partials.cookie-settings')
 
-<h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.data_collection_and_usage_header', [], $locale) !!}</h2>
+<h2>{!! __('webflorist-boilerplate::privacy-policy.data_collection_and_usage_header', [], $locale) !!}</h2>
 
-<h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.log_data_header', [], $locale) !!}</h3>
+<h3>{!! __('webflorist-boilerplate::privacy-policy.log_data_header', [], $locale) !!}</h3>
 {!! __('webflorist-boilerplate::privacy-policy.log_data', [], $locale) !!}
 
-<h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.website_analytics_header', [], $locale) !!}</h3>
+<h3>{!! __('webflorist-boilerplate::privacy-policy.website_analytics_header', [], $locale) !!}</h3>
 {!! __('webflorist-boilerplate::privacy-policy.website_analytics', [], $locale) !!}
 
 @if(config('boilerplate.privacy_policy_google_maps'))
-    <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.google_maps_header', [], $locale) !!}</h3>
+    <h3>{!! __('webflorist-boilerplate::privacy-policy.google_maps_header', [], $locale) !!}</h3>
     {!! __('webflorist-boilerplate::privacy-policy.google_maps', [], $locale) !!}
 @endif
 
-<h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.contact_form_header', [], $locale) !!}</h3>
+<h3>{!! __('webflorist-boilerplate::privacy-policy.contact_form_header', [], $locale) !!}</h3>
 {!! __('webflorist-boilerplate::privacy-policy.contact_form', [], $locale) !!}
 
 @if(config('boilerplate.privacy_policy_user_accounts'))
-    <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.user_accounts_header', [], $locale) !!}</h3>
+    <h3>{!! __('webflorist-boilerplate::privacy-policy.user_accounts_header', [], $locale) !!}</h3>
     {!! __('webflorist-boilerplate::privacy-policy.user_accounts', [], $locale) !!}
 @endif
 
 @if(config('boilerplate.privacy_policy_subscription_payment'))
-    <h3 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.subscription_and_payment_header', [], $locale) !!}</h3>
+    <h3>{!! __('webflorist-boilerplate::privacy-policy.subscription_and_payment_header', [], $locale) !!}</h3>
     {!! __('webflorist-boilerplate::privacy-policy.subscription_and_payment', [], $locale) !!}
 @endif
 
-<h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.outgoing_links_header', [], $locale) !!}</h2>
+<h2>{!! __('webflorist-boilerplate::privacy-policy.outgoing_links_header', [], $locale) !!}</h2>
 {!! __('webflorist-boilerplate::privacy-policy.outgoing_links', [], $locale) !!}
 
 @if(config('boilerplate.privacy_policy_childrens_privacy'))
-    <h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.childrens_privacy_header', [], $locale) !!}</h2>
+    <h2>{!! __('webflorist-boilerplate::privacy-policy.childrens_privacy_header', [], $locale) !!}</h2>
     {!! __('webflorist-boilerplate::privacy-policy.childrens_privacy', [], $locale) !!}
 @endif
 
-<h2 class="mt-4">{!! __('webflorist-boilerplate::privacy-policy.subprocessors_header', [], $locale) !!}</h2>
+<h2>{!! __('webflorist-boilerplate::privacy-policy.subprocessors_header', [], $locale) !!}</h2>
 <ul>
     @include('webflorist-boilerplate::privacy-policy._partials.subprocessor', [
         'company' => 'Google Ireland Limited',

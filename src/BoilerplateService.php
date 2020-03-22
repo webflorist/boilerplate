@@ -60,6 +60,19 @@ class BoilerplateService
         return 'info-circle';
     }
 
+    public function mapContextToColor(string $context) {
+        $contextColorMapping = [
+            'success' => 'green',
+            'info' => 'blue',
+            'danger' => 'red',
+            'warning' => 'orange'
+        ];
+        if (isset($contextColorMapping[$context])) {
+            return $contextColorMapping[$context];
+        }
+        return 'blue';
+    }
+
     /**
      * @return string
      */

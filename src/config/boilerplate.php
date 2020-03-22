@@ -15,13 +15,15 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Privacy Policy Formality
+    | Privacy Policy Singular pronoun
     |--------------------------------------------------------------------------
     |
-    | Set the salutation (formal/informal) for privacy policy.
+    | Use singular (e.g. i, me, my) instead of plural (e.g. we, us, our)
+    | as personal pronouns within the privacy policy.
+    | (Default = false)
     |
     */
-    'privacy_policy_salutation' => 'formal',
+    'privacy_policy_singular' => false,
 
     /*
     |--------------------------------------------------------------------------

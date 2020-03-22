@@ -75,7 +75,7 @@
 
 </head>
 
-<body class="{{$routeNode->payload->get('bodyClass')}}">
+<body class="{{$bodyClass ?? null}} {{$routeNode->payload->get('bodyClass')}}">
 
 @if(!is_null(config('boilerplate.google_tag_manager_id')))
     <!-- Google Tag Manager (noscript) -->
