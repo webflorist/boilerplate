@@ -2,7 +2,7 @@
     <div class="container mx-auto px-5 lg:px-24 xl:px-32">
         <div class="card mb-5 border-info" role="alert">
 
-            <h2 class="card-header text-white bg-info h6 flex">
+            <h2 class="card-header text-white bg-info h6 flex d-flex">
                 <i class="fas fa-info-circle align-self-center mr-3"></i>
                 <div>
                     {{ trans('webflorist-boilerplate::cookie-consent.header') }}

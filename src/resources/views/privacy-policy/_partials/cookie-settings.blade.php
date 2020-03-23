@@ -1,6 +1,6 @@
 <div class="flex d-flex justify-center mb-3">
     <div class="card d-inline-block inline-block">
-        <h2 class="card-header text-white bg-info h6 flex">
+        <h2 class="card-header text-white bg-info h6 flex d-flex">
             <i class="fas fa-info-circle align-self-center mr-3"></i>
             <div>
                 {{ trans('webflorist-boilerplate::privacy-policy.cookie_settings_header', [], $locale) }}
