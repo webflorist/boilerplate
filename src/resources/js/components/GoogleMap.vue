@@ -8,7 +8,8 @@
         <iframe
             v-if="show"
             :src="src"
-            style="width:100%;height:250px;border:0" allowfullscreen=""
+            :class="iframeClass"
+            allowfullscreen=""
         ></iframe>
     </div>
 </template>
@@ -17,7 +18,8 @@
     export default {
         props: {
             src: String,
-            buttonClass: String
+            buttonClass: String,
+            iframeClass: String
         },
         mounted() {
             this.show = false;
