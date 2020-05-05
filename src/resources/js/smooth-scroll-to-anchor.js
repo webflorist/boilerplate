@@ -4,7 +4,8 @@ document.querySelectorAll('a.smooth-scroll[href^="#"]').forEach(anchor => {
         e.preventDefault();
 
         document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'smooth',
+            block: 'center'
         });
     });
 });
