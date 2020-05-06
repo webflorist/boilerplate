@@ -67,12 +67,12 @@ return [
     'cookie_purpose_session' => 'The so called "Session" cookie allows us to store and retrieve information about your current visit (e.g. the selected language or login-state).',
     'cookie_purpose_xsrf' => 'A security-related cookie used to prevent so called "Cross-Site Request Forgery" attacks.',
     'cookie_purpose_accept_test_phase' => 'On your first visit on our website during its test phase, a warning will be displayed. The purpose of this cookie is to display that warning only on your first visit.',
-    'cookie_purpose_accept_cookies' => 'Stores your choice of the cookie dialog displayed on your first visit and stops the website from asking you again.',
+    'cookie_purpose_accept_google_analytics' => 'Stores your choice of the cookie dialog displayed on your first visit and stops the website from asking you again.',
     'cookie_purpose_google_analytics' => 'These cookies are written by Google Analytics which allows us understand and improve user experience and is used for statistical purposes. (For more info see the Google Analytics section below.)',
 
     'cookie_written_on_every_visit' => 'Every visit',
     'cookie_written_on_accept_test_phase' => 'Acknowledging the "Test Operation" dialog popping up on your first visit to our website during its test phase',
-    'cookie_written_on_accept_cookies' => 'Clicking one of the choices in the cookie notification dialog popping up on your first visit to our website',
+    'cookie_written_on_accept_google_analytics' => 'Clicking one of the choices in the cookie notification dialog popping up on your first visit to our website',
     'cookie_written_on_accept_corresponding_cookies' => 'Accepting the corresponding cookie notification as well as on subsequent visits',
 
     'cookie_origin_google_analytics' => 'Google Analytics (by Google Ireland Limited)',
@@ -86,8 +86,8 @@ return [
     'cookie_settings_intro' => 'You can view or reset your current cookie settings here:',
     'cookie_settings_header' => 'Current cookie settings',
     'no_cookie_setting' => 'No selection taken',
-    'cookie_setting_true' => 'Google Analytics cookies accepted',
-    'cookie_setting_false' => 'Google Analytics cookies declined',
+    'cookie_setting_google_analytics_true' => 'Google Analytics cookies accepted',
+    'cookie_setting_google_analytics_false' => 'Google Analytics cookies declined',
     'reset_cookie_setting' => 'Reset cookie setting',
 
     'data_collection_and_usage_header' => 'Data Collection and Usage',
@@ -182,7 +182,7 @@ return [
     ],
     'privacy_policy' => 'Privacy policy',
 
-    'data_purpose_google' => 'Hosting of website and depending services (Google Cloud Platform) as well as website analytics (Google Analytics).',
+    'data_purpose_google' => 'Hosting of website and depending services (Google Cloud Platform)'.(config('boilerplate.privacy_policy_google_analytics') ? ' as well as website analytics (Google Analytics).' : '.'),
     'data_purpose_send_emails' => 'Sending of e-mail notifications (e.g. via contact form).',
     'data_purpose_chargebee' => 'Managing supplier subscriptions.',
     'data_purpose_paypal' => 'Payment processing (for payments via PayPal)',

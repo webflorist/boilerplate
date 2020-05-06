@@ -7,37 +7,49 @@
     "use strict";
 
     var cookieAlert = document.querySelector(".cookiealert");
-    var acceptCookies = document.querySelector(".acceptcookies");
-    var declineCookies = document.querySelector(".declinecookies");
-    let cookieAccepted = getCookie("acceptCookies");
-
     cookieAlert.offsetHeight; // Force browser to trigger reflow (https://stackoverflow.com/a/39451131)
 
-    // Show the alert if we cant find the "acceptCookies" cookie
-    if (!cookieAccepted) {
+    // Show the alert if we cant find the "hideCookieAlert" cookie
+    let cookieAlertHidden = getCookie("hideCookieAlert");
+    if (!cookieAlertHidden) {
         cookieAlert.classList.add("show");
     }
 
-    // Init Google Analytics, if cookies were accepted.
-    if (cookieAccepted === 'true') {
+    // Handle Google Analytics
+    let googleAnalyticsAccepted = getCookie("acceptGoogleAnalytics");
+    if (googleAnalyticsAccepted === 'true') {
         initGoogleAnalytics();
     }
-
-    // When clicking on the agree or disagree button, create a 1 year
-    // cookie to remember user's choice and close the banner
-    acceptCookies.addEventListener("click", function () {
-        makeCookieChoice(true);
-    });
-    declineCookies.addEventListener("click", function () {
-        makeCookieChoice(false);
-    });
-
-    function makeCookieChoice(accepted) {
-        setCookie("acceptCookies", accepted, 365);
-        cookieAlert.classList.remove("show");
+    var acceptGoogleAnalyticsBtn = document.querySelector(".accept-google-analytics");
+    if (acceptGoogleAnalyticsBtn !== null) {
+        acceptGoogleAnalyticsBtn.addEventListener("click", function () {
+            makeGoogleAnalyticsChoice(true);
+        });
+    }
+    var declineGoogleAnalyticsBtn = document.querySelector(".decline-google-analytics");
+    if (declineGoogleAnalyticsBtn !== null) {
+        declineGoogleAnalyticsBtn.addEventListener("click", function () {
+            makeGoogleAnalyticsChoice(false);
+        });
+    }
+    function makeGoogleAnalyticsChoice(accepted) {
+        hideCookieAlert();
+        setCookie("acceptGoogleAnalytics", accepted, 365);
         if (accepted === true) {
             initGoogleAnalytics();
         }
+    }
+
+    // Handle Hide Cookie Alert
+    var hideCookieAlertBtn = document.querySelector(".hide-cookie-alert");
+    if (hideCookieAlertBtn !== null) {
+        hideCookieAlertBtn.addEventListener("click", function () {
+            hideCookieAlert();
+        });
+    }
+    function hideCookieAlert() {
+        cookieAlert.classList.remove("show");
+        setCookie("hideCookieAlert", true, 365);
     }
 
     // Cookie functions from w3schools

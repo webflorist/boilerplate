@@ -9,11 +9,16 @@ $secondary-states-color:     darken($secondary-color, 10%) !default;
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// general imports
-@import 'imports';
-
 // paper-kit-2 import
 @import '../../../../../../resources/paper-kit-2/assets/scss/paper-kit';
 
 // own ui-kit
 @import 'ui-kit/ui-kit';
+
+[data-trigger="hover"] {
+    cursor: help;
+}
+
+[data-trigger="click"] {
+    cursor: pointer;
+}

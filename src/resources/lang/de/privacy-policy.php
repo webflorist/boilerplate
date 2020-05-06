@@ -67,14 +67,16 @@ return [
     'cookie_purpose_session' => 'Das so genannte "Session"-Cookie erlaubt ' . ($s ? 'meiner' : 'unserer') . ' Webseite das Speichern und Abrufen bestimmter Informationen über Ihren aktuellen Besuch (z.B. ausgewählte Sprache oder Anmeldestatus).',
     'cookie_purpose_xsrf' => 'Dies ist ein Sicherheits-bezogenes Cookie, um sogenannte "Cross-Site Request Forgery" Attacken zu unterbinden.',
     'cookie_purpose_accept_test_phase' => 'Beim Ihrem ersten Besuch der Webseite während der Testphase wird eine Warnung eingeblendet. Durch dieses Cookie wird diese Warnung nur bei Ihrem ersten Besuch angezeigt.',
-    'cookie_purpose_accept_cookies' => 'Speichert Ihre Entscheidung des Cookie-Hinweises, der bei Ihrem ersten Besuch angezeigt wird und verhindert, dass die Webseite Sie erneut fragt.',
+    'cookie_purpose_hide_cookie_alert' => 'Verhindert, dass der Cookie-Hinweis nach dem Ausblenden nochmals angezeigt wird.',
+    'cookie_purpose_accept_google_analytics' => 'Speichert Ihre Entscheidung bzgl. Google Analytics im Cookie-Hinweis, der bei Ihrem ersten Besuch angezeigt wird.',
     'cookie_purpose_accept_google_maps' => 'Speichert Ihre Entscheidung bzgl. der Verwendung von Google Maps beim Anzeigen einer Karte und verhindert, dass die Webseite Sie erneut fragt.',
     'cookie_purpose_google_analytics' => 'Diese Cookies werden vom Web-Analyse-Tool "Google Analytics" erstellt, welches ' . ($s ? 'ich' : 'wir') . ' zum verstehen und verbessern des Benutzerverhaltens ' . ($s ? 'nutze' : 'nutzen') . '. (Mehr Informationen hierzu finden Sie weiter unten im Web-Analyse-Abschnitt.)',
     'cookie_purpose_google_maps' => 'Beim Einblenden interaktiver Karten werden verschiedene Cookies von Google Maps erstellt. (Mehr Informationen hierzu finden Sie weiter unten im Google Maps-Abschnitt.)',
 
     'cookie_written_on_every_visit' => 'Jeder Besuch',
     'cookie_written_on_accept_test_phase' => 'Bestätigen des "Testbetrieb"-Hinweises beim ersten Besuch ' . ($s ? 'meiner' : 'unserer') . ' Webseite während der Testphase',
-    'cookie_written_on_accept_cookies' => 'Klick auf eine der Antworten im Cookie-Hinweis, der beim ersten Besuch ' . ($s ? 'meiner' : 'unserer') . ' Webseite erscheint',
+    'cookie_written_on_hide_cookie_alert' => 'Ausblenden des Cookie-Hinweises, der beim ersten Besuch der Webseite erscheint',
+    'cookie_written_on_accept_google_analytics' => 'Klick auf eine der Antworten im Cookie-Hinweis, der beim ersten Besuch ' . ($s ? 'meiner' : 'unserer') . ' Webseite erscheint',
     'cookie_written_on_accept_google_maps' => 'Klick auf "OK" bei der Einverständniserklärung zur Verwendung von Google Maps',
     'cookie_written_on_accept_corresponding_cookies' => 'Bestätigung des diesbezüglichen Cookie-Hinweises sowie bei weiteren Besuchen',
 
@@ -93,8 +95,9 @@ return [
 
     'cookie_settings_header' => 'Aktuelle Cookie-Einstellungen',
     'no_cookie_setting' => 'Keine Auswahl getroffen',
-    'cookie_setting_true' => 'Google Analytics Cookies akzeptiert',
-    'cookie_setting_false' => 'Google Analytics Cookies abgelehnt',
+    'cookie_setting_hide_cookie_alert' => 'Cookie Hinweis ausgeblendet',
+    'cookie_setting_google_analytics_true' => 'Google Analytics Cookies akzeptiert',
+    'cookie_setting_google_analytics_false' => 'Google Analytics Cookies abgelehnt',
     'cookie_setting_google_maps' => 'Google Maps Cookies akzeptiert',
     'reset_cookie_setting' => 'Cookie-Einstellungen zurücksetzen',
 
@@ -142,7 +145,7 @@ return [
     'contact_form_header' => 'Kontaktformular',
     'contact_form' => '
         <p>
-            ' . ($s ? 'Meine' : 'Unsere') . ' Webseite verfügt über ein Kontaktformular, das verwendet werden kann, um ' . ($s ? 'mir' : 'uns') . ' eine E-Mail zu senden. Im Formular können Sie Ihren Namen, Ihre E-Mail-Adresse sowie eine Nachricht eingeben. Beim Absenden der Anfrage werden diese über den Anbieter <strong>Twilio Sendgrid Inc.</strong> (siehe Liste von Datenverarbeitern weiter unten) in unsere Mailbox zugestellt.
+            ' . ($s ? 'Meine' : 'Unsere') . ' Webseite verfügt über ein Kontaktformular, das verwendet werden kann, um ' . ($s ? 'mir' : 'uns') . ' eine E-Mail zu senden. Im Formular können Sie Ihren Namen, Ihre E-Mail-Adresse sowie eine Nachricht eingeben. Beim Absenden der Anfrage werden diese über den Anbieter <strong>Twilio Sendgrid Inc.</strong> (siehe Liste von Datenverarbeitern weiter unten) in ' . ($s ? 'meine' : 'unsere') . ' Mailbox zugestellt.
         </p>
     ',
 
@@ -166,7 +169,7 @@ return [
     ],
     'privacy_policy' => 'Datenschutzerklärung',
 
-    'data_purpose_google' => 'Hosten der Webseite und benötigter Dienste (Google Cloud Platform), sowie Web-Analyse (Google Analytics).',
+    'data_purpose_google' => 'Hosten der Webseite und benötigter Dienste (Google Cloud Platform)'.(config('boilerplate.privacy_policy_google_analytics') ? ', sowie Web-Analyse (Google Analytics).' : '.'),
     'data_purpose_google_us' => 'Darstellung interaktiver Karten (Google Maps)',
     'data_purpose_send_emails' => 'Senden von E-Mails (z.B. via das Kontaktformular).',
     'data_purpose_chargebee' => 'Verwalten von Zulieferer-Abonnements.',

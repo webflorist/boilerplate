@@ -15,7 +15,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Privacy Policy Singular pronoun
+    | Privacy Policy Singular Pronouns.
     |--------------------------------------------------------------------------
     |
     | Use singular (e.g. i, me, my) instead of plural (e.g. we, us, our)
@@ -33,6 +33,7 @@ return [
     | Enable/disable certain specific content for the privacy policy.
     |
     */
+    'privacy_policy_google_analytics' => false,
     'privacy_policy_test_phase' => false,
     'privacy_policy_user_accounts' => false,
     'privacy_policy_subscription_payment' => false,

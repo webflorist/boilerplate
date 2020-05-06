@@ -2,12 +2,14 @@
     new Vue({
         el: '#appCookieSettings',
         data: {
-            acceptCookies: null,
+            hideCookieAlert: null,
+            acceptGoogleAnalytics: null,
             acceptGoogleMaps: null
         },
         methods: {
             reset: function () {
-                this.deleteCookie('acceptCookies');
+                this.deleteCookie('hideCookieAlert');
+                this.deleteCookie('acceptGoogleAnalytics');
                 this.deleteCookie('acceptGoogleMaps');
                 this.deleteCookie('_ga');
                 this.deleteCookie('_gid');
@@ -15,19 +17,22 @@
                 window.location.reload(true);
             },
             getSettingIcon: function (setting) {
-                if (setting === null) {
-                    return 'question-circle';
-                }
                 if (setting === 'true') {
-                    return 'comment-check';
+                    return 'check-circle';
                 }
                 if (setting === 'false') {
-                    return 'comment-slash';
+                    return 'times-circle';
                 }
             }
         },
+        computed: {
+            noCookieSetting: function () {
+                return (this.hideCookieAlert === null) && (this.acceptGoogleAnalytics === null) && (this.acceptGoogleMaps === null);
+            }
+        },
         mounted: function () {
-            this.acceptCookies = this.getCookie('acceptCookies');
+            this.hideCookieAlert = this.getCookie('hideCookieAlert');
+            this.acceptGoogleAnalytics = this.getCookie('acceptGoogleAnalytics');
             this.acceptGoogleMaps = this.getCookie('acceptGoogleMaps');
         }
     });

@@ -46,11 +46,19 @@
         'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_end_of_session', [], $locale),
     ])
     @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
-        'name' => 'acceptCookies',
-        'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_accept_cookies', [], $locale),
-        'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_accept_cookies', [], $locale),
+        'name' => 'hideCookieAlert',
+        'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_hide_cookie_alert', [], $locale),
+        'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_hide_cookie_alert', [], $locale),
         'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_1_year', [], $locale),
     ])
+    @if(config('boilerplate.privacy_policy_google_analytics'))
+        @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
+            'name' => 'acceptGoogleAnalytics',
+            'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_accept_google_analytics', [], $locale),
+            'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_accept_google_analytics', [], $locale),
+            'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_1_year', [], $locale),
+        ])
+    @endif
     @if(config('boilerplate.privacy_policy_google_maps'))
         @include('webflorist-boilerplate::privacy-policy._partials.first_party_cookie', [
             'name' => 'acceptGoogleMaps',
@@ -86,13 +94,15 @@
     </tr>
     </thead>
     <tbody>
-    @include('webflorist-boilerplate::privacy-policy._partials.third_party_cookie', [
-        'name' => '_ga<br>_gat<br>_gid',
-        'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_google_analytics', [], $locale),
-        'origin' => __('webflorist-boilerplate::privacy-policy.cookie_origin_google_analytics', [], $locale),
-        'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_accept_corresponding_cookies', [], $locale),
-        'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_2_years', [], $locale).'<br>'.__('webflorist-boilerplate::privacy-policy.cookie_duration_24_hours', [], $locale).'<br>'.__('webflorist-boilerplate::privacy-policy.cookie_duration_1_minute', [], $locale),
-    ])
+    @if(config('boilerplate.privacy_policy_google_analytics'))
+        @include('webflorist-boilerplate::privacy-policy._partials.third_party_cookie', [
+            'name' => '_ga<br>_gat<br>_gid',
+            'purpose' => __('webflorist-boilerplate::privacy-policy.cookie_purpose_google_analytics', [], $locale),
+            'origin' => __('webflorist-boilerplate::privacy-policy.cookie_origin_google_analytics', [], $locale),
+            'written_on' => __('webflorist-boilerplate::privacy-policy.cookie_written_on_accept_corresponding_cookies', [], $locale),
+            'duration' => __('webflorist-boilerplate::privacy-policy.cookie_duration_2_years', [], $locale).'<br>'.__('webflorist-boilerplate::privacy-policy.cookie_duration_24_hours', [], $locale).'<br>'.__('webflorist-boilerplate::privacy-policy.cookie_duration_1_minute', [], $locale),
+        ])
+    @endif
     @if(config('boilerplate.privacy_policy_google_maps'))
         @include('webflorist-boilerplate::privacy-policy._partials.third_party_cookie', [
             'name' => '-',
@@ -117,8 +127,10 @@
 <h3>{!! __('webflorist-boilerplate::privacy-policy.log_data_header', [], $locale) !!}</h3>
 {!! __('webflorist-boilerplate::privacy-policy.log_data', [], $locale) !!}
 
-<h3>{!! __('webflorist-boilerplate::privacy-policy.website_analytics_header', [], $locale) !!}</h3>
-{!! __('webflorist-boilerplate::privacy-policy.website_analytics', [], $locale) !!}
+@if(config('boilerplate.privacy_policy_google_analytics'))
+    <h3>{!! __('webflorist-boilerplate::privacy-policy.website_analytics_header', [], $locale) !!}</h3>
+    {!! __('webflorist-boilerplate::privacy-policy.website_analytics', [], $locale) !!}
+@endif
 
 @if(config('boilerplate.privacy_policy_google_maps'))
     <h3>{!! __('webflorist-boilerplate::privacy-policy.google_maps_header', [], $locale) !!}</h3>
@@ -152,11 +164,12 @@
         'company' => 'Google Ireland Limited',
         'address' => 'Gordon House, Barrow Street, Dublin 4, Ireland, EU',
         'purpose' => __('webflorist-boilerplate::privacy-policy.data_purpose_google', [], $locale),
-        'categories' => [
-            __('webflorist-boilerplate::privacy-policy.data_category.inventory_data', [], $locale),
-            __('webflorist-boilerplate::privacy-policy.data_category.usage_data', [], $locale),
-            __('webflorist-boilerplate::privacy-policy.data_category.usage_statistics', [], $locale)
-        ],
+        'categories' =>
+            array_merge(
+                [__('webflorist-boilerplate::privacy-policy.data_category.usage_data', [], $locale)],
+                config('boilerplate.privacy_policy_user_accounts') ? [__('webflorist-boilerplate::privacy-policy.data_category.inventory_data', [], $locale)] : [],
+                config('boilerplate.privacy_policy_google_analytics') ? [__('webflorist-boilerplate::privacy-policy.data_category.usage_statistics', [], $locale)] : []
+            ),
         'privacy_policy' => 'https://policies.google.com/privacy'
     ])
     @if(config('boilerplate.privacy_policy_google_maps'))
