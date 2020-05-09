@@ -4,7 +4,10 @@
 
     <meta charset="utf-8">
 
-    @if(!is_null(config('boilerplate.google_tag_manager_id')))
+    <link rel="preload" href="{{ mix('/css/app.css') }}" as="style">
+    <link rel="preload" href="{{ mix('/js/app.js') }}" as="script">
+
+@if(!is_null(config('boilerplate.google_tag_manager_id')))
     <!-- Google Tag Manager -->
         <script>(function (w, d, s, l, i) {
                 w[l] = w[l] || [];
@@ -23,10 +26,14 @@
         <!-- End Google Tag Manager -->
     @endisset
 
-    <script>
-        function initGoogleAnalytics(){
-            @if(!is_null(config('boilerplate.google_analytics_tracking_id')))
-                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    @if(config('boilerplate.privacy_policy_google_analytics'))
+        <script>
+            function initGoogleAnalytics() {
+                @if(!is_null(config('boilerplate.google_analytics_tracking_id')))
+                    window.ga = window.ga || function () {
+                    (ga.q = ga.q || []).push(arguments)
+                };
+                ga.l = +new Date;
                 ga('create', '{{config('boilerplate.google_analytics_tracking_id')}}', 'auto');
                 ga('set', 'anonymizeIp', true);
                 ga('send', 'pageview');
@@ -34,9 +41,10 @@
                 gascript.async = true;
                 gascript.src = "https://www.google-analytics.com/analytics.js";
                 document.getElementsByTagName("head")[0].appendChild(gascript, document.getElementsByTagName("head")[0]);
-            @endisset
-        }
-    </script>
+                @endisset
+            }
+        </script>
+    @endif
 
     @php($routeNode = route_tree()->getCurrentNode())
     <title>{{$documentTitle}}</title>
@@ -65,7 +73,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <link rel="canonical" href="{{route_node()->getUrl()->absolute(true)}}" />
+    <link rel="canonical" href="{{route_node()->getUrl()->absolute(true)}}"/>
 
     <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
@@ -90,15 +98,32 @@
 
 @include('webflorist-boilerplate::cookie-consent')
 
-<script src="{{ mix('/js/app.js') }}"></script>
+@if($deferJs ?? false)
 
-@isset($scripts)
-    {{$scripts}}
-@endisset
+    <script defer src="{{ mix('/js/app.js') }}"></script>
 
-<script>
-    {!! Form::generateVueInstances() !!}
-</script>
+    @if(isset($scripts) && (strlen($scripts)>0))
+        <script defer src="data:text/javascript;base64, {{base64_encode($scripts)}}"></script>
+    @endisset
+
+    <script defer src="data:text/javascript;base64, {{base64_encode(Form::generateVueInstances())}}"></script>
+
+@else
+
+    <script src="{{ mix('/js/app.js') }}"></script>
+
+    @isset($scripts)
+        {{$scripts}}
+    @endisset
+
+    <script>
+        {!! Form::generateVueInstances() !!}
+    </script>
+
+@endif
+
+
+
 
 </body>
 

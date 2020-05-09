@@ -26,3 +26,15 @@ if (! function_exists('to_javascript')) {
         return "JSON.parse('$json')";
     }
 }
+
+if (! function_exists('mix_css_url')) {
+    /**
+     * Converts php to javascript.
+     *
+     * @return string
+     */
+    function mix_css_url(string $path) : string
+    {
+        return $path.'?'.md5_file($path);
+    }
+}
