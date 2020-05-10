@@ -2,7 +2,8 @@
     'documentTitle' => $documentTitle,
     'favIcons' => $favIcons ?? true,
     'noRobots' => $noRobots ?? false,
-    'metaDescription' => $metaDescription ?? null
+    'metaDescription' => $metaDescription ?? null,
+    'deferJs' => $deferJs ?? false
 ])
 
     @isset($head)
