@@ -35,6 +35,6 @@ if (! function_exists('mix_css_url')) {
      */
     function mix_css_url(string $path) : string
     {
-        return $path.'?'.md5_file($path);
+        return asset($path).'?'.md5_file(public_path($path));
     }
 }
