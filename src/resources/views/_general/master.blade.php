@@ -114,7 +114,7 @@
     <script defer src="{{ mix('/js/app.js') }}"></script>
 
     @if(isset($scripts) && (strlen($scripts)>0))
-        <script defer src="data:text/javascript;base64, {{base64_encode($scripts)}}"></script>
+        <script defer src="data:text/javascript;base64, {{base64_encode(str_replace(['<script>', '</script>'], '', $scripts))}}"></script>
     @endisset
 
     <script defer src="data:text/javascript;base64, {{base64_encode(Form::generateVueInstances())}}"></script>
