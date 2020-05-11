@@ -46,7 +46,9 @@
         </script>
     @endif
 
-    @php($routeNode = route_tree()->getCurrentNode())
+    @php
+      $routeNode = route_tree()->getCurrentNode()
+    @endphp
     <title>{{$documentTitle}}</title>
     <meta name="description" content="{{$metaDescription ?? $routeNode->payload->get('description')}}">
 
@@ -58,8 +60,17 @@
         <link rel="mask-icon" href="{{asset('/safari-pinned-tab.svg')}}" color="#5bbad5">
     @endif
 
-    @if($noRobots ?? false)
-        <meta name="robots" content="noindex,nofollow"/>
+    @php
+        $robotsValues = [];
+        if($robotsNoIndex ?? false) {
+            $robotsValues[] = 'noindex';
+        }
+        if($robotsNoFollow ?? false) {
+            $robotsValues[] = 'nofollow';
+        }
+    @endphp
+    @if(count($robotsValues)>0)
+        <meta name="robots" content="{{implode(',',$robotsValues)}}"/>
     @endif
 
     <meta name="msapplication-TileColor" content="#2d89ef">

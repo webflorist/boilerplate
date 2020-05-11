@@ -1,7 +1,8 @@
 @component('webflorist-boilerplate::_general.master', [
     'documentTitle' => $documentTitle,
     'favIcons' => $favIcons ?? true,
-    'noRobots' => $noRobots ?? false,
+    'robotsNoIndex' => $robotsNoIndex ?? false,
+    'robotsNoFollow' => $robotsNoFollow ?? false,
     'metaDescription' => $metaDescription ?? null,
     'deferJs' => $deferJs ?? false
 ])
