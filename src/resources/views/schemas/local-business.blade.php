@@ -9,7 +9,7 @@
 		"streetAddress": "{{$address['streetAddress']}}",
 		"addressLocality": "{{$address['addressLocality']}}",
 		"postalCode": "{{$address['postalCode']}}",
-		"addressCountry": "{{$address['addressCountry']}}
+		"addressCountry": "{{$address['addressCountry']}}"
     },
 	"image": [
 	    "{{$image}}"
