@@ -17,7 +17,7 @@
 	"email": "{{$email}}",
 	"telephone": "{{$telephone}}",
 	"url": "{{$url}}",
-    "description": "{{$description}}",
+    "description": "{{$description}}"
 }
 
 </script>
