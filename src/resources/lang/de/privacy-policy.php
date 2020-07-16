@@ -83,7 +83,6 @@ return [
     'cookie_origin_google_analytics' => 'Google Analytics (von Google Ireland Limited)',
     'cookie_origin_google_maps' => 'Google Maps (von Google LLC)',
 
-
     'cookie_duration_end_of_session' => 'Ende des Besuchs',
     'cookie_duration_1_year' => '1 Jahr',
     'cookie_duration_2_years' => '2 Jahre',
@@ -92,7 +91,6 @@ return [
     'cookie_duration_various' => 'verschieden',
 
     'cookie_settings_intro' => 'Sie können Ihre aktuellen Cookie-Einstellungen hier jederzeit einsehen oder zurücksetzen:',
-
     'cookie_settings_header' => 'Aktuelle Cookie-Einstellungen',
     'no_cookie_setting' => 'Keine Auswahl getroffen',
     'cookie_setting_hide_cookie_alert' => 'Cookie Hinweis ausgeblendet',
