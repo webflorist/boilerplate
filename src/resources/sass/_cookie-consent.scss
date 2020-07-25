@@ -4,16 +4,16 @@
  * Released under MIT license
  */
 .cookiealert {
-  position: fixed !important;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin: 0 !important;
-  z-index: 999;
-  opacity: 0;
-  border-radius: 0;
-  transform: translateY(100%);
-  transition: all 500ms ease-out;
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 !important;
+    z-index: 999;
+    opacity: 0;
+    border-radius: 0;
+    transform: translateY(100%);
+    transition: all 500ms ease-out;
 }
 
 .cookiealert .card {
@@ -23,7 +23,7 @@
 }
 
 .cookiealert.show {
-  opacity: 1;
-  transform: translateY(0%);
-  transition-delay: 1000ms;
+    opacity: 1;
+    transform: translateY(0%);
+    transition-delay: 1000ms;
 }
