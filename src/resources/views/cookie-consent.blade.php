@@ -4,7 +4,7 @@
 
             <h2 class="card-header text-white bg-info h6 flex d-flex">
                 <i class="fas fa-{{config('boilerplate.privacy_policy_google_analytics') ? 'info-circle' : 'shield-check'}} align-self-center"></i>
-                <div class="flex-grow-1 mx-3 mt-1">{{ trans('webflorist-boilerplate::cookie-consent.header') }}</div>
+                <div class="flex-grow flex-grow-1 mx-3">{{ trans('webflorist-boilerplate::cookie-consent.header') }}</div>
                 @if(!config('boilerplate.privacy_policy_google_analytics'))
                     <button type="button" class="btn btn-link p-0 m-0 text-white hide-cookie-alert"
                             title="{{trans('webflorist-boilerplate::cookie-consent.hide')}}"

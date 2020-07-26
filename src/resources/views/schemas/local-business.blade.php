@@ -12,7 +12,7 @@
 		"addressCountry": "{{$address['addressCountry']}}"
     },
 	"image": [
-	    "{{$image}}"
+	    "{!! is_array($image) ? implode("\",\n	    \"",$image) : $image !!}"
 	],
 	"email": "{{$email}}",
 	"telephone": "{{$telephone}}",
