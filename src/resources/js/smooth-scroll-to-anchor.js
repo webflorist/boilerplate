@@ -17,7 +17,7 @@ if (window.location.hash) scroll(0, 0);
 setTimeout(function () {
     scroll(0, 0);
 }, 1);
-$(function () {
+(function () {
     // *only* if we have anchor on the url
     if (window.location.hash) {
         document.querySelector(window.location.hash).scrollIntoView({
