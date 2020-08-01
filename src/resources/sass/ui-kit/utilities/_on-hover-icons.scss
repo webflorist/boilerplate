@@ -7,61 +7,61 @@
 }
 
 .on-hover-icons-right {
-    i {
+    i, svg {
         @extend .icon-property;
     }
 
     &:hover {
-        i {
+        i, svg {
             transform: translateX(5px);
         }
     }
 }
 
 .on-hover-icons-left {
-    i {
+    i, svg {
         @extend .icon-property;
     }
 
     &:hover {
-        i {
+        i, svg {
             transform: translateX(-5px);
         }
     }
 }
 
 .on-hover-icons-down {
-    i {
+    i, svg {
         @extend .icon-property;
     }
 
     &:hover {
-        i {
+        i, svg {
             transform: translateY(5px);
         }
     }
 }
 
 .on-hover-icons-up {
-    i {
+    i, svg {
         @extend .icon-property;
     }
 
     &:hover {
-        i {
+        i, svg {
             transform: translateY(-5px);
         }
     }
 }
 
 .on-hover-icons-rotate {
-    i {
+    i, svg {
         @extend .icon-property;
     }
 
     &:hover,
     &:focus {
-        i {
+        i, svg {
             filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
             -webkit-transform: rotate(53deg);
             -ms-transform: rotate(53deg);
@@ -71,13 +71,13 @@
 }
 
 .on-hover-icons-magnify {
-    i {
+    i, svg {
         @extend .icon-property;
     }
 
     &:hover,
     &:focus {
-        i {
+        i, svg {
             transform: scale(1.22);
         }
     }

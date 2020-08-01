@@ -3,13 +3,22 @@
         <div class="card mb-5 border-info" role="alert">
 
             <h2 class="card-header text-white bg-info h6 flex d-flex">
-                <i class="fas fa-{{config('boilerplate.privacy_policy_google_analytics') ? 'info-circle' : 'shield-check'}} align-self-center"></i>
-                <div class="flex-grow flex-grow-1 mx-3">{{ trans('webflorist-boilerplate::cookie-consent.header') }}</div>
+                <div class="w-5 align-self-center">
+                    @if(config('boilerplate.privacy_policy_google_analytics'))
+                        @include('webflorist-boilerplate::svg.fas-info-circle')
+                    @else
+                        @include('webflorist-boilerplate::svg.fas-shield-check')
+                    @endif
+                </div>
+                <div
+                    class="flex-grow flex-grow-1 mx-3">{{ trans('webflorist-boilerplate::cookie-consent.header') }}</div>
                 @if(!config('boilerplate.privacy_policy_google_analytics'))
                     <button type="button" class="btn btn-link p-0 m-0 text-white hide-cookie-alert"
                             title="{{trans('webflorist-boilerplate::cookie-consent.hide')}}"
                             aria-label="{{trans('webflorist-boilerplate::cookie-consent.hide')}}">
-                            <i class="fas fa-times"></i>
+                        <div class="w-4">
+                            @include('webflorist-boilerplate::svg.fas-times')
+                        </div>
                     </button>
                 @endif
             </h2>
