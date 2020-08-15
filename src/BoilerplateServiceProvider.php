@@ -32,6 +32,7 @@ class BoilerplateServiceProvider extends ServiceProvider
         $this->loadMigrations();
         $this->loadTranslations();
         $this->loadViews();
+        $this->setBladeDirectives();
     }
 
     protected function mergeConfig()
@@ -76,4 +77,12 @@ class BoilerplateServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/resources/views', 'webflorist-boilerplate');
     }
+
+    private function setBladeDirectives()
+    {
+        \Blade::directive('svg', function ($name) {
+            return "<?php echo file_get_contents(public_path('images/'.$name.'.svg')); ?>";
+        });
+    }
+
 }
