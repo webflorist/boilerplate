@@ -3,6 +3,7 @@
 namespace Webflorist\Boilerplate\BaseObjects;
 
 use Exception;
+use Throwable;
 use Google\Cloud\ErrorReporting\Bootstrap;
 use Illuminate\Foundation\Exceptions\Handler;
 
@@ -33,11 +34,11 @@ abstract class ExceptionHandler extends Handler
      * For a full tutorial on deploying Laravel to Google Cloud,
      * @see https://github.com/GoogleCloudPlatform/php-docs-samples/blob/master/appengine/php72/laravel-framework/README.md
      *
-     * @param \Exception $exception
+     * @param Throwable $exception
      * @return void
      */
     # [START error_reporting_setup_php_laravel]
-    public function report(Exception $exception)
+    public function report(Throwable $exception)
     {
         if ($this->shouldntReport($exception)) {
             return;
@@ -57,10 +58,10 @@ abstract class ExceptionHandler extends Handler
      * Render an exception into an HTTP response.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \Exception $exception
+     * @param \Throwable $exception
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $exception)
+    public function render($request, Throwable $exception)
     {
         return parent::render($request, $exception);
     }
